@@ -1,0 +1,37 @@
+@charset "UTF8";
+.content3 {
+    font-family: verdana;
+    width: 100%;
+    height: 100%;
+    font-size: calc(10px + 2vmin);
+    text-align: center;
+    margin-top: 10px;
+
+}
+/*
+
+.content3-container{
+    
+    margin-left: 8vmin;
+    margin-right: 8vmin;
+}
+.brokers{
+    margin-left: 8vmin;
+    margin-right: 8vmin;
+}
+*/
+.LyricsTitleBroker{
+    font-family: Arial Black;
+    height: 100%;
+    width: 100% !important;
+    font-weight: bolder;
+    color: black !important;
+    /*line-height: 0.7em;*/
+    font-size: 1em;
+    /*font-stretch: extra-expanded;
+    font-size-adjust: 20;
+    text-shadow: 2px 3px #fff, 7px 7px #4d4c4c;
+    */
+    margin: 0em 0.3em 0em 0.3em !important;
+    
+  }

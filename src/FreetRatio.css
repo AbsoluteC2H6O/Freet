@@ -1,0 +1,82 @@
+.ratioTotal{
+    text-align: center;
+    width: 300px;
+    height: 300px;
+}
+.marginRatio{
+    margin: 0px 0px 0px 10px;
+}
+.ratioText{
+    background-color:  rgba(226, 225, 225, 0.418);
+    border: 2px 2px 2px 2px;
+}
+
+#circleBar{
+    margin-top: 180px;
+    text-align: center;
+
+}
+#cirleBar .round strong{
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    transform: translate(-50%);
+    font-size: 40px;
+    color: #212121;
+    font-weight: 100;
+
+}
+
+#circleBar span{
+    display: block;
+    color: #999;
+    font-size: 17px;
+    margin-top: 10px;
+
+
+}
+
+#circleBar span{
+    color: #ff5c5c;
+    font-size: 22px;
+    margin-right: 7px;
+
+
+}
+.LyricsRatio{
+    font-family: 'Passion One' !important;
+    font-size: 3em !important;
+    color: black;
+    /*Eliminar sombra y agregar leyenda para cada una del color que sea
+        azul o rojo y la vineta, total es negro
+        tipo de letra arial black la del boton
+        menos grosor la letra dentro dle ratio
+        azul par mas de 50% y rojo para menos de 50
+        eliminar sombra
+        letras de senales mas pequenas
+    */
+    
+  }
+  .Senal{
+    font-size: 1em;
+
+  }
+  @font-face{
+    font-family: Neutro-ExtraBold;
+    src: url(neutro/Neutro.otf);
+  }
+  
+  .LyricsTTF{
+    font-family: Neutro-ExtraBold;
+    font-size: 1em !important;
+  
+  }
+  .Neutro-ExtraBold{
+    font-family: 'Neutro-ExtraBold';
+    font-size: 1em !important;
+    
+  }
+
+  
+
+

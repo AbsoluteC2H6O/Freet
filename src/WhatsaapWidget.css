@@ -1,0 +1,27 @@
+.WhatsaapWidget{
+    position:fixed !important;
+    display: scroll!important;
+    bottom:40px !important;
+    right:40px!important;
+   
+}
+.float{
+	position:fixed;
+	width:65px;
+	height:65px;
+	bottom:15px;
+	right:35px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+    font-size:50px;
+	box-shadow: 2px 2px 3px #999;
+    z-index:100;
+}
+
+.my-float{
+	margin-top:10px;
+	margin-left: 3px;
+	margin-bottom: 5px;
+}

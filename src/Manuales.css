@@ -1,0 +1,190 @@
+.lyricsManual{
+    color: white;
+    font-size: 6em !important;
+}
+.BannerMark:after{
+    content: "COMMODITIES"; 
+    font-weight: bolder;
+    font-stretch: extra-condensed;
+    font-weight: bold;
+    color: white;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+      
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    -ms-pointer-events: none;
+    -o-pointer-events: none;
+    pointer-events: none;
+  
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  .ManualFont{
+    background-color: rgba(68, 173, 173, 0.877);
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.ManualLyrics{
+    font-size: 1em !important;
+    color: black !important;
+}
+.ManualLyrics2{
+
+    font-size: 1.4em !important;
+    color: rgb(48, 48, 128) !important;
+}
+.LyricsTitleM{
+    font-family: Arial Black;
+    
+    font-weight: bolder;
+    color:black !important;
+    /*line-height: 0.7em;*/
+    
+    font-size: 1.6em;
+    /*font-stretch: extra-expanded;
+    font-size-adjust: 20;
+    text-shadow: 2px 3px #fff, 7px 7px #4d4c4c;
+    */
+    font-stretch: extra-condensed;
+    font-weight: bold;
+    
+  }
+  @font-face{
+    font-family: Timeline;
+    src: url(timeline/Timeline.ttf);
+  }
+  
+  .LyricsTimeline{
+    font-family: Timeline;
+    font-size: 1.20em !important;
+    color: black;
+    letter-spacing: 0.15em;
+    line-height: 4em;
+  
+  }
+  .LyricsTimelineSubs{
+    font-family: Timeline;
+    font-size: 2.2em !important;
+    color: rgb(230, 180, 89);
+    text-shadow: 1px 1px #fff, 2px 2px #1b1a1a;
+    font-weight: normal;
+    line-height: 2em;
+    letter-spacing: 0.2em;
+    margin-top: 2em;
+    
+  }
+  .LyricsTimelineSubs2{
+    font-family: Arial;
+    font-size: 1em;
+    color: black;
+    font-stretch: extra-condensed;
+    font-weight: bolder;
+
+
+  }
+.hrs{
+    color: rgb(230, 180, 89);
+    text-shadow: 1px 1px #fff, 2px 2px #1b1a1a;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    height:2px;
+    border-width:0;
+    background-color:rgb(235, 163, 29);
+  }
+  .dropbtn11 {
+    color: rgb(48, 48, 128);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown11 {
+    position: relative;
+    display: inline-block;
+    color: rgb(48, 48, 128);
+    
+  }
+  
+  .dropdown-content11 {
+   
+    display: none;
+    margin-left: 1.5em;
+    z-index: 1;
+  }
+  
+  .dropdown-content11 a {
+     color: rgb(48, 48, 128);
+     text-decoration: none;
+
+  }
+  .dropdown-content11 li{
+      text-decoration: none;
+  }
+  
+  .dropdown11:hover .dropdown-content11 {
+    display: block;
+    color: rgb(48, 48, 128)
+  }
+ 
+  .margin{
+      margin-top: 2em;
+  }
+  .margin23{
+    width: 80% !important;
+    
+   
+  }
+  
+  mark{
+      color:red;
+  }
+  li a, .dropbtn {
+  display: inline-block;
+  text-decoration: none;
+}
+li{
+    text-decoration: none;
+}
+.ManualLyrics3{
+  font-family: Impacted, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 5em;
+  color: black;
+  font-stretch: extra-condensed;
+  font-weight: bolder;
+  margin-top: 0.5em;
+}
+.ManualLyrics3Font{
+  background-color: rgba(173, 173, 173, 0.76);
+  
+}
+.marginLyrcisS{
+  margin-bottom: 1em!important;
+  margin-top: 1.5em!important;
+}
+
+.ManualLyrics4{
+  font-family: Impacted, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 5em;
+  color: white;
+  text-shadow: 1px 1px #fff, 4px 4px #1b1a1a;
+}
+.ManualLyrics4Font{
+  background-color: rgba(62, 122, 106, 0.829);
+  
+}

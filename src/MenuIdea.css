@@ -1,0 +1,70 @@
+.menuIdea {
+    font-size: 16px;
+}
+
+.menuIdeaLograda:after{
+  content: "LOGRADO"; 
+  font-size: 4em; 
+  font-weight: bolder;
+  font-stretch: extra-condensed;
+  font-weight: bold;
+  color: rgba(52, 165, 214, 0.774);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+    
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  -o-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.menuIdeaExpirada:after{
+    content: "EXPIRADA"; 
+    font-size: 3em; 
+    font-weight: bolder;
+    font-stretch: extra-condensed;
+    font-weight: bold;
+    color: rgba(236, 21, 21, 0.781);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+      
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    -ms-pointer-events: none;
+    -o-pointer-events: none;
+    pointer-events: none;
+  
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+.rotate{
+    -ms-transform: rotate(315deg); /* IE 9 */
+  transform: rotate(315deg); /* Standard syntax */
+}
+.rotate2{
+    -ms-transform: rotate(45deg); /* IE 9 */
+  transform: rotate(45deg); /* Standard syntax */
+}

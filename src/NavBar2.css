@@ -1,0 +1,81 @@
+.navbar2 ul, .navbar2 nav{
+    background-color: rgb(104, 153, 138);
+    padding: 2px;
+}
+.navbar2 a{
+    background-color: rgb(104, 153, 138);
+    padding: 1px;
+}
+.navbar2 ul{
+    font-size: calc(10px + 1.5vmin);
+   
+}
+.navbar2 div{
+    margin-left: 8vmin;
+    margin-right: 8vmin;
+}
+/*
+NEW
+*/
+.navBarFreet2{
+    background-color: rgb(60, 102, 91) !important;
+}
+.navsticky 
+{
+ position: -webkit-sticky; 
+ position: sticky;
+ top: 4rem!important;
+}
+body{ padding-top: 70px; }
+
+a{
+   color: white; 
+}
+
+a:hover{
+    color: black !important; 
+ }
+
+a:active{
+    color: black !important; 
+ }
+
+ .LyricsTitleNav2{
+    font-family: Arial Black;
+    height: 100%;
+    width: 100% !important;
+    font-weight: bolder;
+    color: white !important;
+    /*line-height: 0.7em;*/
+    
+    font-size: 1.6em;
+    /*font-stretch: extra-expanded;
+    font-size-adjust: 20;
+    text-shadow: 2px 3px #fff, 7px 7px #4d4c4c;
+    */
+    font-stretch: extra-condensed;
+    font-weight: bold;
+    margin: 0em 0.3em 0em 0.3em !important;
+    
+  }
+  @supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sticky-top-2 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 56px;
+    z-index: 1020;
+  }
+}
+.margin{
+    margin-top: 56px;
+}
+.marginEspecial{
+    padding: 0em 2em 0em 2em !important;
+}
+.margin2{
+    padding: 0em 0em 0em 8em !important;
+}
+.margin1{
+    padding: 0em 0em 0em 0em !important;
+}
+

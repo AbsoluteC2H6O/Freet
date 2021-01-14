@@ -1,38 +1,150 @@
 .App {
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ /* height: 40vmin;
+  pointer-events: none;*/
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
-  background-color: #282c34;
+ /* background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  color: white;*/
+}
+.BodyPage1 div{
+  margin-left: 0vmin;
+  /*
+    word-wrap: normal;
+    word-wrap: break-word;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;9
+    */
+}
+
+.LyricsText{
+  font-family: Arial;
+  font-size: 1.5em;
+  color: black;
+}
+.LyricsTextFooter{
+  font-family: Arial;
+  font-size: 0.6em;
+  color: white;
+  text-align: justify;
+  line-height: 1em;
+  font-weight: bolder;
+  background-color: rgba(14, 5, 0, 0.849);
+
+}
+a .LyricsTextFooter{
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.LyricsTitle{
+  font-family: Arial Black;
+  height: 100%;
+  width: 100% !important;
+  font-weight: bolder;
+  color: white !important;
+  /*line-height: 0.7em;*/
+  
+  font-size: 1.6em;
+  /*font-stretch: extra-expanded;
+  font-size-adjust: 20;
+  text-shadow: 2px 3px #fff, 7px 7px #4d4c4c;
+  */
+  font-stretch: extra-condensed;
+  font-weight: bold;
+  margin: 0em 0.3em 0em 0.3em !important;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face{
+  font-family: Impacted;
+  src: url(impacted/Impacted.ttf);
 }
+
+.LyricsTTF{
+  font-family: Impacted;
+  font-size: 3em !important;
+
+}
+.Passion{
+  font-family: 'Passion One', cursive;
+  text-shadow: 1px 1px #fff, 7px 7px #1b1a1a;
+  font-size: 8em !important;
+  
+}
+.PaddingNav{
+  padding: 0px 0px 0px 0px !important;
+}
+.PaddingTicket{
+  margin: 0px 0px 0p 0px!important;
+  padding: 0px 0px 0px 0px !important;
+}
+/*
+
+
+
+
+par que el tren de clientes, debe entender disnarly:
+porque cada estacion esta ahi cual es su meta:
+EL tren de clientes esta hecho para que los emprendedores tomen un camino sin ansiedad y sin organizacion
+para organizar sus clientes,
+generalmente los emprendedores saben construir su producto y asumen que se va a vender
+es una naturaleza porque la mayoria son asi, salen a venderlo porque es asi
+asumen que lo que uno tiene en mente es lo qu eva a hacer
+es lo que va a querer el cliente
+el tren de clientes esta hecho para que el emprendedor, empiece a concentrarse en los clientes de una manera experta de decirle 
+los clinetes osn los que te ayudaran a ti para perflar el producto que todo mundo quiere
+antes el 90% de los fracasos los geeks que salen el producto y salen a la calle
+los clientes no tiene todas las reespuestas no queire decir eso
+pero tienen muchas necesidades que tienen que indicarnos
+
+la primera estacion e sjustamente para que podamos contruis lo que se denomina PRODUCT MARKET FIT 
+
+ENGRANAR ENCAJAR EL PRODUCTO PRODUC MARKET FIT
+engranamos el producto con el mercado como un rompecabeza que se engrana una pieza con la otra
+con el observacional vemos ese porducto con esa mirada, engranar el producto con el mercado desde el primer momenot
+vamos a salir a la calle a observar a los dolientes, clinetes o usuarios del producto que se quiere consuitrr o servicio
+en el observacional se hace todo lo que esta en los dialogos del formulario
+con esas preguntas coseguimos unas erepsuestas que nos hacen sentir mas comodos mas confiados de que vamos a construir algo que engrene
+
+
+con la sigueinte etapa firts user, no scontramos en vivo con un cliente con un usuario empezamos a entenderlo a vivirlo y snetirlo
+es diferente es diferente observar una actividad que vivir al actividad
+
+conseguir un usuario de lato grado de interes, qu etenga micho dolo ro necesidad en lo que vive o l que sufre.
+
+en la sigueinte estacion la propagacion de todo esto buscar mas usuarios hacer grupos a ver donde estan los cantumes de peces o de cleintes
+
+tal vez un usuario nos este llevando para un lugar donde no hay muchos clientes por su necesidad y forma de pensar del prodcuto
+mientras qu eotro usaurio que podemos capturar en el grupo de usuairos bueno en este grupo hay 8 que tienen esta necesidad y 2 solo quieren la necesidad 
+de este cliente
+
+tres primeros clientes , se puede hacer una suma de necesidad o construir un MVP 2 O 3 PRIMER GRUPO de usuarios por buen camino por ejemplo
+
+
+enfoque de grupo: es poner a prueba el producto en una feria en un auditorio enfocarnos en aparte de la necesidad, queremor ver cual es us intereacciones
+
+el chocolate o el papael le sincomoda, el color de la vista no sirve, muchos click para llegar a un sitio
+
+observar que lejos esta lo que se quiere ofrecer como producto de lo que se quiere observar la conduca de los usuairios
+or naturaleza debe salir alguein que dice yo les pago por esto un primer cliente, identificar la cultura del primer cliente.
+
+sigueinte etapa: primer cliente, tal vez se le oferta...
+
+luego los primer grupo de clientes early adopters, individuos que despues de los priers clientes, qu eya tenemos un producto tan depurado y sintetizado
+empiezan a aparecer indivuods de boca, que empiezan a adoptar el producto, no addaptarlos, es u sueno 
+
+ellos solos van a ser proxys para nosotros y van a expandir la palabra del producto par anosotros ya qui es que escalamos al inficito a convertirnos en empresa
+
+al llegar a escalamiento hayq ue crear departamentos y administrar meor la cosa.
+
+
+*/

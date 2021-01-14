@@ -1,0 +1,82 @@
+@charset "UTF8";
+@media (max-width:1290px) and (min-width:600px) {
+    .content1{
+       font-size: 50px;
+    }
+}
+.lyricsBanner{
+    font-family: Impact;
+    font-size: calc(70px + 4vmin);
+    height: 100%;
+    width: 100% !important;
+    font-weight: bolder;
+    font-size-adjust: initial;
+    font-size: 7;
+    line-height: 0.7em;
+    text-shadow: 2px 3px #fff, 7px 7px #4d4c4c;
+    
+}
+.content1 {
+    
+    font-family:Impact;
+    font-weight: bold;
+    background-color: rgb(86, 178, 240);
+    position: relative;
+    font-size: calc(50px + 4vmin);
+    width: 100% !important;
+    height: 100%;  
+    
+}
+.cupo {
+    
+    background-color: rgb(86, 178, 240);
+}
+.content1-cupo {
+    font-family: 'Alfa Slab One', cursive;
+    font-weight: bold;
+    color: black;
+    border-radius: 40%;
+    display: inline; 
+    
+       
+} 
+h1{
+    color: white;
+}
+.image-content1{
+   
+    margin: 0px 0x 0px 0px !important;
+    padding: 0px 0px 0px 0px !important;
+    
+}
+
+
+.cover {
+    background-color: rgb(33, 158, 231);
+    text-align: center;
+    position: relative;
+  }
+
+  .cover p {
+    font-size: 100px;
+    width: 80%;
+    color: white;
+    margin: 40px;
+    display: inline-block;
+    line-height: 0.9em;
+    font-weight: lighter !important;
+  }
+
+  .cover button {
+    font-size: 30px;
+    font-weight: bolder;
+    position: absolute;
+    bottom: 10px;
+    border: solid 2px black;
+    border-radius: 0em;
+    background-color: white;
+    color: black;
+    padding: 10px 20px 10px 20px;
+    font-family: Arial Black !important;
+  }
+ 

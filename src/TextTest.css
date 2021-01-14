@@ -1,0 +1,21 @@
+@font-face{
+    font-family: FrontPageNeue;
+    src: url(front-page-neue/FrontPageNeue.otf);
+  }
+  
+  .LyricsTTF{
+    font-family: FrontPageNeue;
+    font-stretch: extra-condensed;
+    
+    
+  }
+  .FrontPageNeue{
+  font-family: 'FrontPageNeue';
+    text-shadow: 0.1px 1.5px #fff, 7px 7px #1b1a1a;
+    font-size: 3em !important;
+    height: 100%;
+    width: 100% !important;
+    font-stretch: ultra-condensed;
+    line-height: 1em;
+
+  }

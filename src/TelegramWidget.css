@@ -1,0 +1,78 @@
+
+.Telegram{
+    border:0px;
+    height:500px;
+    width:500px;
+    margin:5px;
+    box-shadow: 0 0 16px 3px rgba(0,0,0,.2);
+      
+}
+.Telegram2{
+   
+    font-size:20px;
+    font-weight:;
+    text-align:center;
+    
+    padding:15px;
+    background:#389ce9;
+    text-decoration:none;
+    color:#fff;
+    display:scroll;
+    position:fixed;
+    bottom:130px;
+    right:45px;
+    -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+   
+    
+   
+  
+}
+.block-scroll {overflow:hidden;}
+.Telegram3{
+    width:30px;
+    height:20px;
+    vertical-align: initial;
+    margin:0px 0px;
+}
+.Telegram4{
+    display:scroll;
+    position:fixed;
+    bottom:90px;
+    right:35px;
+    padding: 0; 
+    border-radius: 50px;
+    box-shadow: 0 0 16px 3px rgba(0,0,0,.2);
+    z-index:3;
+    
+    
+}
+
+.btn-flotante {
+	/* Cambiar el tamaño de la tipografia font-size: 16px; */
+	/* Texto en mayusculas text-transform: uppercase;  */
+	 /* Fuente en negrita o bold font-weight: bold;*/
+	 /* Color del texto color: #ffffff;*/
+	border-radius: 5px; /* Borde del boton */
+	letter-spacing: 2px; /* Espacio entre letras */
+	 /* Color de fondo background-color: #E91E63;box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);*/
+	 /* Relleno del boton padding: 18px 30px;transition: all 300ms ease 0ms;*/
+	position: fixed;
+	bottom: 130px;
+	right: 20px;
+	z-index: 99;
+}
+.btn-flotante:hover {
+	background-color: #2c2fa5; /* Color de fondo al pasar el cursor */
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+	transform: translateY(-7px);
+}
+@media only screen and (max-width: 200px) {
+ 	.btn-flotante {
+		font-size: 14px;
+		padding: 12px 20px;
+		bottom: 20px;
+		right: 20px;
+	}
+} 

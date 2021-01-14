@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './Content1.css';
 import {Container,Row,Col, Button} from 'react-bootstrap';
-import BanerFreet from "./BanerFreet.png"
 import './Content1.css';
 import './App.css';
 //<h1 className="col-sm-3 text-danger">hola</h1>

@@ -27,7 +27,10 @@ import ForexManual from './ForexManual';
 import CommoditiesManual from './CommoditiesManual.js';
 import ValoresManual from './ValoresManual';
 import TradingMiniApp from './TradingMiniApp';
-
+import Pdf1 from './pages/Pdf1';
+import Pdf2 from './pages/Pdf2';
+import Pdf3 from './pages/Pdf3';
+import Pdf4 from './pages/Pdf4';
 //import Forex from './Forex';
 /*
  <Route path="/AnalisisGeneral" component={AnalisisGeneral}/>
@@ -59,9 +62,13 @@ class ComponentPart1 extends Component{
                       <Route exact path="/ValoresManual" component={ValoresManual}/>
                       <Route exact path="/Planes" component={Planes}/>
                       <Route exact path="/SobreNosotros" component={SobreNosotros}/>
-                      <Route exact path="/" component={Forex}/>
+                      <Route default exact path="/Freet" component={Forex}/>
+                      <Route exact path="/Pdf1" component={Pdf1}/>
+                      <Route exact path="/Pdf2" component={Pdf2}/>
+                      <Route exact path="/Pdf3" component={Pdf3}/>
+                      <Route exact path="/Pdf4" component={Pdf4}/>
                    </Switch>
-          
+                   
             	</Router> 
             </>
         );

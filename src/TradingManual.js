@@ -32,7 +32,13 @@ import velaalcista from './Manuales/Trading/velaalcista.png';
 import velabajista from './Manuales/Trading/velaalcista.png';
 import velajapon from './Manuales/Trading/velajapon.png';
 import velaneutral from './Manuales/Trading/velaneutral.png';
- 
+import picture2 from './Catalogos/Picture2.png';
+import picture3 from './Catalogos/Picture3.png';
+import picture4 from './Catalogos/Picture4.png';
+import picture5 from './Catalogos/Picture5.png';
+import picture1 from './Catalogos/Picture1.png';
+import descargar from './Catalogos/descargar.PNG';
+import './NavBar1.css';
   class TradingManual extends Component{
       render(){
       
@@ -647,13 +653,166 @@ import velaneutral from './Manuales/Trading/velaneutral.png';
                     md={12}
                     sm={12}
                   >
-                 
+                
                 <h4 className="text-left LyricsText ManualLyrics4">CATALOGOS</h4>
                  </Col>
                  </Row>
+                 <Row 
+                 className="marginElement">
+                   <Col
+                      xs={{ span: 4, offset: 1}}
+                      lg={{ span: 2, offset: 2}}
+                      md={{ span: 2, offset: 2}}
+                      sm={{ span: 4, offset: 1}}
+                    
+                   >
+                     <a href="../Catalogos/CatPatronG.pdf" download="../Catalogos/CatPatronG.pdf">
+                    <button
+                     className="imagCat"
+                    >
+                    <img 
+                      src={picture2} 
+                      className="img-fluid" 
+                      alt="Catalogo1" 
+                      style={{width: '100%'}}>
+                    </img>
+                    <button class="btn"><i class="fa fa-download"></i> Dercargar</button>
+                    </button>
+                    </a>
+                   </Col>
+                   <Col
+                    xs={{ span: 4, offset: 0}}
+                    lg={{ span: 2, offset: 0}}
+                    md={{ span: 2, offset: 0}}
+                    sm={{ span: 4, offset: 0}}
+                   >
+                      <a href="../Catalogos/CatPatronV.pdf" download="catalogoPatronVelas">
+                      <button
+                      className="imagCat"
+                      >
+                    <img 
+                      src={picture3} 
+                      className="img-fluid " 
+                      alt="Catalogo2" 
+                      style={{width: '100%'}}>
+                    </img>
+                    <button class="btn"><i class="fa fa-download"></i> Dercargar</button>
+                    </button>
+                    </a>
+                   </Col>
+                   <Col
+                    xs={{ span: 4, offset: 0}}
+                    lg={{ span: 2, offset: 0}}
+                    md={{ span: 2, offset: 0}}
+                    sm={{ span: 4, offset: 0}}
+                   >
+                    <a href="../Catalogos/CatindicadorT.pdf" download="catalogoIndicadorTecnico">
+                    <button
+                     className="imagCat"
+                    >
+                    <img 
+                      src={picture4} 
+                      className="img-fluid" 
+                      alt="Catalogo3" 
+                      style={{width: '100%'}}>
+                    </img>
+                    <button class="btn"><i class="fa fa-download"></i> Dercargar</button>
+                    </button>
+                    </a>
+                   </Col>
+                   <Col
+                      xs={{ span: 4, offset: 0}}
+                      lg={{ span: 2, offset: 0}}
+                      md={{ span: 2, offset: 0}}
+                      sm={{ span: 4, offset: 0}}
+                   >
+                     <a href="../Catalogos/TradingPlan.xlsx" download="catalogoPlanTrading">
+                     <button
+                      className="imagCat"
+                     >
+                    <img 
+                      src={picture5} 
+                      className="img-fluid" 
+                      alt="Catalogo4" 
+                      style={{width: '100%'}}>
+                    </img>
+                    <button class="btn"><i class="fa fa-download"></i> Dercargar</button>
+                    </button>
+                    </a>
+                   </Col>
+                   
+                 </Row>
+                 
               </Container>
               </>
           );
       }
   }
   export default TradingManual;
+
+  /**
+   *  
+   *  <a href="./pdf1" target="_self">
+                    <button
+                     className="imagCat"
+                    >
+                    <img 
+                      src={picture2} 
+                      className="img-fluid" 
+                      alt="Catalogo1" 
+                      style={{width: '100%'}}>
+                    </img>
+                    <button class="btn"><i class="fa fa-download"></i> Download</button>
+                    </button>
+                    </a>
+   * https://es.wikihow.com/crear-un-bot%C3%B3n-de-descarga#/Imagen:Create-a-Download-Button-Step-8-Version-2.jpg
+   * http://trucosycursos.es/incrustrar-o-embeber-un-archivo-excel-en-una-pagina-web-html/
+   * https://es.stackoverflow.com/questions/244067/como-visualizar-un-excel-en-una-tabla-html-y-luego-enviarlo-a-mi-base-de-datos
+   * https://webdesign.tutsplus.com/es/tutorials/quick-tip-using-the-html5-download-attribute--cms-23880
+   * Por el momento, podemos añadir una alternativa decente, como proporcionar instrucciones extra debajo del enlace de descarga para navegadores que no lo soportan. Para hacer eso, necesitarás descargar Modernizr con la prueba de la funcionalidad  download incluída.
+
+Configura la compilación de Modernizr.
+Luego podemos agregar el siguiente script.
+
+if ( ! Modernizr.adownload ) {
+  var $link = $('a');
+
+	$link.each(function() {
+		var $download = $(this).attr('download');
+	
+		if (typeof $download !== typeof undefined && $download !== false) {
+      var $el = $('<div>').addClass('download-instruction').text('Right-click and select "Download Linked File"');
+      $el.insertAfter($(this));
+		}
+
+	});
+}
+    <a href="/images/myw3schoolsimage.jpg" download="w3logo">
+  <img src="/images/myw3schoolsimage.jpg" alt="W3Schools">
+</a>
+   <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML5 Download Attribute</title>
+        <meta rel="description" content="Basic example of using HTML5 download attribute to force non-downloadable file to download by the browser.">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/modernizr.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    </head>
+    <body>
+        <header class="site-header cf">
+            <h1>HTML5 Download Attribute</h1>
+            <a class="back-to-article" href="http://webdesign.tutsplus.com/tutorials/quick-tip-using-the-html5-download-attribute--cms-23880">Back to the Tutorial</a>
+        </header>
+        <div class="site-content cf">
+           <a class="btn btn-download" href="download/acme-doc-2.0.1.txt" download="Acme Documentation (ver. 2.0.1).txt">Download Text</a>
+        </div>
+        <script src="js/scripts.js"></script>
+
+<!--analytics-->
+<script src="http://tutsplus.github.io/github-analytics/ga-tracking.min.js"></script>
+
+    </body>
+</html>
+   */

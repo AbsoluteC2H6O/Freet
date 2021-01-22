@@ -127,8 +127,125 @@ a:active{
   .img1:hover{
     opacity: 1.0;
   }
- 
+
+  .imagCat{
+    opacity: 1.0;
+    margin: 1em, 1em,1em, 1em;
+    width: 100%;
+  }
+   .imagCat:hover{
+    opacity: 0.8;
+  }
+  @media screen and (min-width: 1400px) {
+    nav{
+      font-size: 16px;
+    }
+  }
+
+
+  @media screen and (max-width: 1299px) {
+    nav {
+      font-size: 10px;
+    }
+  }
+ .navbar-nav a:hover {
+   padding:0px;
+  /*border-bottom: 3px solid red;*/
+}
+@media screen and (min-width: 1790px) {
+  .imgIndice{
+    width: 42em!important;
+    height: 22em!important;
+  }
+  .nav-item li a{
+    width: 25em!important;
+    height: 20em!important;
+  }
+}
+@media screen and (max-width: 1789px) {
+  .imgIndice{
+    width: 19em!important;
+    height: 15em!important;
+  }
+  .nav-item li a{
+    width: 20em!important;
+    height: 16em!important;
+  }
+}
+@media screen and (max-width: 1629px) {
+  .imgIndice{
+    width: 19em!important;
+    height: 15em!important;
+  }
+  .nav-item li a{
+    width: 19em!important;
+    height: 15em!important;
+  }
+}
+@media screen and (max-width: 1549px) {
+  .imgIndice{
+    width: 18em!important;
+    height: 15em!important;
+  }
+  .nav-item li a{
+    width: 18em!important;
+    height: 15em!important;
+  }
+}
+@media screen and (max-width: 1287px) {
+  .imgIndice{
+    width: 20em!important;
+    height: 16em!important;
+  }
+  .nav-item li a{
+    width: 20em!important;
+    height: 16em!important;
+  }
+}
+@media screen and (max-width: 850px) {
+  .imgIndice{
+    width: 15em!important;
+    height: 16em!important;
+  }
+  .nav-item li a{
+    width: 15em!important;
+    height: 16em!important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .imgIndice{
+    width: 12em!important;
+    height: 16em!important;
+  }
+  .nav-item li a{
+    width: 12em!important;
+    height: 16em!important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .imgIndice{
+    width: 10em!important;
+    height: 16em!important;
+  }
+  .nav-item li a{
+    width: 10em!important;
+    height: 16em!important;
+  }
+}
+
  /*
+.imgIndice a{
+  width: 100%;
+  height: 20em;
+
+}
+
+.img4 li a{
+  width: 19%;
+  height: 14em;
+}
+
+ 
 .navbar a{
     float:left;
 }

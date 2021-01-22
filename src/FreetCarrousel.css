@@ -38,3 +38,36 @@
   margin: 0em 0.3em 0em 0.3em !important;
   
 }
+
+.imgCarr:hover{
+  opacity: 0.8;
+ /* background-color: rgb(60, 102, 91);*/
+  
+
+}
+
+.carr span{
+ 
+  background-color: black;
+}
+.carr a:hover{
+  opacity: 0.6;
+  
+}
+.imgCarr{
+  opacity: 1.0;
+  margin: 1em, 1em,1em, 1em;
+  width: 85%;
+}
+.column1 {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row1::after {
+  content: "";
+  clear: both;
+  display: table;
+}

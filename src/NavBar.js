@@ -90,11 +90,11 @@ class NavBar extends Component{
                         <div className="subnav">
                         <button className="subnavbtn text-uppercase LyricsTitleNav1">Educacion <i class="fa fa-caret-down"></i></button>
                             <div className="subnav-content">z
-                            <li className="nav-item">
+                            <li className="nav-item img4">
                         <NavLink to="/ForexManual" activeclassName="active">
                             <a href="#ForexManual"><img 
                             src={Forex} 
-                            className="img-fluid img1" 
+                            className="img-fluid img1 imgIndice " 
                             alt="ForexManual" 
                             style={{width: '96.5%'}}
                             onClick={this.handleClick}
@@ -103,42 +103,42 @@ class NavBar extends Component{
                         </img></a>
                         </NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item img4">
                         <NavLink to="/CriptomonedasManual" activeclassName="active">
                             <a href="#CriptomonedasManual"><img 
                             src={Criptomonedas} 
-                            className="img-fluid img1" 
+                            className="img-fluid img1 imgIndice " 
                             alt="CriptomonedasManual" 
                             style={{width: '96.5%'}}>
                         </img></a>
                         </NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item img4">
                         <NavLink to="/ValoresManual" activeclassName="active">
                             <a href="#package"><img 
                             src={Valores} 
-                            className="img-fluid img1" 
+                            className="img-fluid img1 imgIndice " 
                             alt="ValoresManual" 
                             style={{width: '96.5%'}}>
                         </img></a>
                         </NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item img4">
                         <NavLink to="/CommoditiesManual" activeclassName="active">
                             <a href="#CommoditiesManual"><img 
                             src={Commodities} 
-                            className="img-fluid img1" 
+                            className="img-fluid img1 imgIndice" 
                             alt="CommoditiesManual" 
                             style={{width: '100%'}}>
                         </img></a>
                         </NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item img4">
                         <NavLink to="/TradingManual" activeclassName="active">
                         <a href="#TradingManual">
                         <img 
                             src={Trading} 
-                            className="img-fluid img1" 
+                            className="img-fluid img1 imgIndice " 
                             alt="TradingManual" 
                             style={{width: '100%'}}>
                         </img>

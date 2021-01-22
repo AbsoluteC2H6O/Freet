@@ -2,32 +2,86 @@ import React, {Component} from "react";
 import './NavBar';
 import './App.css';
 import Logo from './Logo';
-// import Nav/////Bar from './NavBar';
-import Content1 from './Content1';
-import Content3 from './Content3';
-import TradingMiniApp from './TradingMiniApp';
-import NavBar2 from './NavBar2'
 import { Helmet } from 'react-helmet';
-import {Button,Container,Row,Col} from 'react-bootstrap';
-//import { RealTimeChartWidget } from 'react-tradingview-widgets';
+import {Container,Row,Col} from 'react-bootstrap';
 import FreetCarrousel from './FreetCarrousel';
-import { render } from '@testing-library/react';
-import TradingViewWidget, { Themes } from 'react-tradingview-widget';
-import FreetMiniGrafico from './FreetMiniGrafico';
 import WidgetsTradingView from './WidgetsTradingView';
-import ComponentPart2 from "./ComponentPart2";
-import ComponentPart1 from "./ComponentPart1"
-import FreetRatio from "./FreetRatio";
-//import AdvancedGraphics from './AdvancedGraphics.js';
+import ComponentPart1 from "./ComponentPart1";
 import TextTest from './TextTest';
 import Footer from './Footer';
 import firebase from './firebase';
 import {Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
-//import { data } from "jquery";
 import WhatsappWidget from './WhatsappWidget';
 import TelegramWidget from "./TelegramWidget";
+import LoginGoogle from './LoginGoogle';
+//import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/storage";
+import FileUploadNew from './MenuIdea';
+//import{ useFirebaseApp} from "reactfire";
+
+class FileImage extends Component{
+	constructor(props){
+	super(props);
+		this.state= {
+			user: null,
+			pictures: []
+		};
+		this.handleChange = this.handleChange.bind(this);
+		this.handleUpload = this.handleUpload.bind(this);
+	}
+	handleUpload (event){
+		const file = event.target.files[0];
+		//CatalogosDescargables
+		const storageRef = firebase.storage().ref(`IdeaImagenes/${file.name}`);
+		const task = storageRef.put(file);
+	
+		task.on('state_change', (snapshot) => {
+		  let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+		  this.setState({
+			uploadValue: percentage
+		  })
+		}, (error) =>{
+		  this.setState({
+			message: `Ha ocurrido un error: ${error.message}`
+		  })
+		}, () =>{
+		  const record = {
+			photoURL: this.state.user.photoURL,
+			displayName: this.state.user.displayName,
+			image: task.snapshot.downloadURL
+	
+		  };
+
+		  const dbRef = firebase.database().ref('IdeaImagenes');
+		  const newPicture = dbRef.push();
+		  newPicture.set(record);
+		});
+	  }
+
+	  componentWillMount (){
+
+        firebase.database().ref('pictures').on('child_added', snapshot =>{
+			this.setState({
+				//push es un metodo no inmutable
+				//no modificar el original
+				pictures: this.state.pictures.concat(snapshot.val())
+			});
+		});
+    }
+	render(){
+		return(
+			<>
+			
+			</>
+		);
+	}
+}
 class Freet extends Component{
+	
   render(){
+	//const firebase = useFirebaseApp();
+	//console.log(firebase);
     return( 
     	<>
 			<Container 
@@ -35,14 +89,14 @@ class Freet extends Component{
 				className="container-fluid FreetPage pageHeader"
 			>
 				
+				<LoginGoogle/>
 				<Logo/>
-				
 				<ComponentPart1/>	
 				
 				
-				<Footer/>
-				<TelegramWidget/>
-				<WhatsappWidget/>	
+			<Footer/>
+			<TelegramWidget/>
+			<WhatsappWidget/>	
 			</Container>
       </>
     );

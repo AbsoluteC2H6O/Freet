@@ -34,7 +34,7 @@
 }
 .LyricsTextFooter{
   font-family: Arial;
-  font-size: 0.6em;
+  font-size: 0.9em;
   color: white;
   text-align: justify;
   line-height: 1em;
@@ -84,8 +84,34 @@ a .LyricsTextFooter{
   padding: 0px 0px 0px 0px !important;
 }
 .PaddingTicket{
-  margin: 0px 0px 0p 0px!important;
+  margin: 0px 0px 0px 0px!important;
   padding: 0px 0px 0px 0px !important;
+}
+.marginElement{
+  margin: 1em 1em 1em 1em!important;
+  padding: 0px 0px 0px 0px !important;
+}
+.marginElement2{
+  margin: 0em 0em 3em 0em!important;
+  padding: 0px 0px 0px 0px !important;
+}
+.FooterCenter{
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+.FooterCenterT{
+  position: relative;
+  left: 50%;
+  transform: translatex(-50%);
+}
+.marginIcons{
+  margin:1em 1em 1em 1em!important;
+  font-weight: bolder;
+  font-size: 3em;
+}
+.LyricsTextPago{
+  background-color: black!important;
 }
 /*
 

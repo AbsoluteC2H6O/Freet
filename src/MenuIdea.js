@@ -1,15 +1,108 @@
-import React from "react";
+import React,{Component} from "react";
 import { inject, observer } from "mobx-react";
 import { Button, Form, Container, Row, Col} from "react-bootstrap";
 import './NavBar2.css';
 import './App.css';
 import './MenuIdea.css';
+//import firebase from './firebase'
+//import * as firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/storage";
+/**
+ * 
+ * 
+ * class FileUploadNew extends Component{
+  constructor(){
+    super()
+    this.state ={
+      uploadValue: 0,
+     
+    }
+  }
+
+  render(){
+    return(
+      <>
+      
+      <progress value={this.state.uploadValue} max='100'></progress>
+      <br/>
+      <input type='file' onChange={this.props.OnUpload}/>
+      
+      </>
+    );
+  }
+}
+aqui va
+{
+            this.state.pictures.map(picture =>(
+              <div>
+                <img src={picture.image}/>
+                <br/>
+                <img src={picture.photoURL} alt={picture.displayName}/>
+                <span>{picture.displayName}</span>
+              </div>
+            ))
+          }
+ */
+
+
+class FileUpload extends Component{
+  constructor(){
+    super()
+    this.state ={
+      uploadValue: 0,
+      picture: null,
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange (event){
+    const file = event.target.files[0];
+    //CatalogosDescargables
+    const storageRef = firebase.storage().ref(`IdeaImagenes/${file.name}`);
+    const task = storageRef.put(file);
+
+    task.on('state_change', (snapshot) => {
+      let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      this.setState({
+        uploadValue: percentage
+      })
+    }, (error) =>{
+      this.setState({
+        message: `Ha ocurrido un error: ${error.message}`
+      })
+    }, () =>{
+      this.setState({
+        message: 'Archivo subido',
+        picture: task.snapshot.downloadURL,
+        uploadValue: 100
+
+      });
+    });
+  }
+  
+  render(){
+    return(
+      <>
+      
+      <progress value={this.state.uploadValue} max='100'></progress>
+      <br/>
+      <input type='file' onChange={this.handleChange}/>
+      {this.state.message}
+      <br/>
+      <img width='100' src={this.state.picture}/>
+      </>
+    );
+  }
+}
 class Menu extends React.Component {
   tituloRef = React.createRef();
   subtituloRef = React.createRef();
   imagenIdeaRef = React.createRef();
   noticiasPositivasRef = React.createRef();
   noticiasNegativasRef = React.createRef();
+
+  
   render() {
     const { IdeaStore } = this.props;
 
@@ -77,7 +170,9 @@ class Menu extends React.Component {
           <Col md={{ span: 12, offset: 0}} 
               sm={{ span: 12, offset: 0}}
           >
-              
+          <FileUpload/>
+          {/**<FileUploadNew onUpload={this.handleUpload}/> */}
+          {/**aqui va8*/}
           <Form.Label>URL imagen Idea: </Form.Label>
           <Form.Control
             type="text"

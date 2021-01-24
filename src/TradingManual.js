@@ -666,7 +666,8 @@ import './NavBar1.css';
                       sm={{ span: 4, offset: 1}}
                     
                    >
-                     <a href="../Catalogos/CatPatronG.pdf" download="../Catalogos/CatPatronG.pdf">
+                    
+                     <a href="https://onedrive.live.com/embed?cid=2E431B176AD0DFA1&resid=2E431B176AD0DFA1%212309&authkey=APUaHQJ43gtPbLY&em=2" id="enlaceDescargarPdf" download>
                     <button
                      className="imagCat"
                     >
@@ -686,7 +687,7 @@ import './NavBar1.css';
                     md={{ span: 2, offset: 0}}
                     sm={{ span: 4, offset: 0}}
                    >
-                      <a href="../Catalogos/CatPatronV.pdf" download="catalogoPatronVelas">
+                      <a href="CatPatronV.pdf" download="catalogoPatronVelas">
                       <button
                       className="imagCat"
                       >
@@ -706,7 +707,7 @@ import './NavBar1.css';
                     md={{ span: 2, offset: 0}}
                     sm={{ span: 4, offset: 0}}
                    >
-                    <a href="../Catalogos/CatindicadorT.pdf" download="catalogoIndicadorTecnico">
+                    <a href="CatindicadorT.pdf" download="catalogoIndicadorTecnico">
                     <button
                      className="imagCat"
                     >
@@ -726,7 +727,7 @@ import './NavBar1.css';
                       md={{ span: 2, offset: 0}}
                       sm={{ span: 4, offset: 0}}
                    >
-                     <a href="../Catalogos/TradingPlan.xlsx" download="catalogoPlanTrading">
+                     <a href="TradingPlan.xlsx" download="catalogoPlanTrading">
                      <button
                       className="imagCat"
                      >

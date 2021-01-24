@@ -9,15 +9,20 @@ import WidgetsTradingView from './WidgetsTradingView';
 import ComponentPart1 from "./ComponentPart1";
 import TextTest from './TextTest';
 import Footer from './Footer';
-import firebase from './firebase';
+//import firebase from './firebase';
 import {Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
 import WhatsappWidget from './WhatsappWidget';
 import TelegramWidget from "./TelegramWidget";
 import LoginGoogle from './LoginGoogle';
 //import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/storage";
+//import "firebase/firestore";
+//import "firebase/storage";
 import FileUploadNew from './MenuIdea';
+import firebase from "firebase/app";
+//import "firebase/firestore";
+import "firebase/storage";
+import { extend } from "jquery";
+import Graficoavanzado from "./Graficoavanzado";
 //import{ useFirebaseApp} from "reactfire";
 
 class FileImage extends Component{
@@ -39,6 +44,7 @@ class FileImage extends Component{
 		task.on('state_change', (snapshot) => {
 		  let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
 		  this.setState({
+			  //name: 'carlos',
 			uploadValue: percentage
 		  })
 		}, (error) =>{
@@ -49,7 +55,7 @@ class FileImage extends Component{
 		  const record = {
 			photoURL: this.state.user.photoURL,
 			displayName: this.state.user.displayName,
-			image: task.snapshot.downloadURL
+			image: task.snapshot.donwloadURL
 	
 		  };
 
@@ -61,6 +67,14 @@ class FileImage extends Component{
 
 	  componentWillMount (){
 
+		//const nameRef = firebase.database().ref().child('object').child('name')
+//lisener
+		//nameRef.on('Value', (snapshot) =>{
+		//		this.setState({
+		//			name:snapshot.val()
+		//		})
+		//	})
+		//creamos en firebase un object con carlos e hijo nametiempo real database
         firebase.database().ref('pictures').on('child_added', snapshot =>{
 			this.setState({
 				//push es un metodo no inmutable
@@ -77,6 +91,35 @@ class FileImage extends Component{
 		);
 	}
 }
+class Header extends Component{
+	render(){
+		return(
+			<>
+			<Container fluid>
+			<Row>
+				<Col
+				md={{ span: 6, offset: 0}} 
+				sm={{ span: 6, offset: 0}}
+				lg={{ span: 6, offset: 0}} 
+				xs={{ span: 6, offset:0}}
+				>
+				<Logo/>	
+				</Col>
+
+				<Col
+				md={{ span: 2, offset: 4}} 
+				sm={{ span: 4, offset: 2}}
+				lg={{ span: 2, offset: 4}} 
+				xs={{ span: 4, offset:2}}
+				>
+				<LoginGoogle/>
+				</Col>
+			</Row>
+			</Container>
+			</>
+		);
+	}
+}
 class Freet extends Component{
 	
   render(){
@@ -89,14 +132,18 @@ class Freet extends Component{
 				className="container-fluid FreetPage pageHeader"
 			>
 				
-				<LoginGoogle/>
-				<Logo/>
+				<img
+               src="gs://freet-55de4.appspot.com/IdeaImagenes/Picture2.png"
+               />
+				
+				<Header/>
 				<ComponentPart1/>	
 				
-				
+			
 			<Footer/>
 			<TelegramWidget/>
 			<WhatsappWidget/>	
+			
 			</Container>
       </>
     );

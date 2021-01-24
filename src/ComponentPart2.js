@@ -12,7 +12,7 @@ import ideas from './ideas';
 import resultados from './resultados';
 import ratio from './ratio';
 import calculadoraderiesgo from './calculadoraderiesgo';
-import graficoavanzado from './graficoavanzado';
+import Graficoavanzado from './Graficoavanzado';
 import NavBar2 from './NavBar2';
 import Footer from  './Footer';
 /*
@@ -169,7 +169,7 @@ class ComponentPart2 extends Component{
                       <Route exact path="/resultados" component={resultados}/>
                       <Route exact path="/ratio" component={ratio}/>
                       <Route exact path="/calculadoraderiesgo" component={calculadoraderiesgo}/>
-                      <Route exact path="/graficoavanzado" component={graficoavanzado}/>
+                      <Route exact path="/graficoavanzado" component={Graficoavanzado}/>
                    </Switch>
                 <Row>
                 

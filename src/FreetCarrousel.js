@@ -40,7 +40,7 @@ function FreetCarrousel(){
 				className="d-block w-100 imgCarr"
 				src={Neteller}
 				alt="First slide"
-				style={{width:'20%'}}
+				style={{width:'20%', height:'100px'}}
 			/>
 			</Col>
 			<Col>
@@ -48,7 +48,7 @@ function FreetCarrousel(){
 				className="d-block w-100 imgCarr"
 				src={Skrill}
 				alt="First slide"
-				style={{width:'20%'}}
+				style={{width:'20%', height:'100px'}}
 			/>
 			</Col>
 			<Col>
@@ -56,7 +56,7 @@ function FreetCarrousel(){
 				className="d-block w-100 imgCarr"
 				src={Uphold}
 				alt="First slide"
-				style={{width:'20%'}}
+				style={{width:'20%', height:'100px'}}
 			/>
 			</Col>
 			</Row>
@@ -74,7 +74,7 @@ function FreetCarrousel(){
 				className="d-block w-100 imgCarr"
 				src={Bitcoin}
 				alt="First slide"
-				style={{width:'20%'}}
+				style={{width:'20%', height:'100px'}}
 			/>
 			</Col>
 			<Col>
@@ -82,7 +82,7 @@ function FreetCarrousel(){
 				className="d-block w-100 imgCarr"
 				src={TransferenciaB}
 				alt="First slide"
-				style={{width:'20%'}}
+				style={{width:'20%', height:'100px'}}
 			/>
 			</Col>
 			<Col>
@@ -90,7 +90,7 @@ function FreetCarrousel(){
 				className="d-block w-100 imgCarr"
 				src={Airtm}
 				alt="First slide"
-				style={{width:'20%'}}
+				style={{width:'20%', height:'100px'}}
 			/>
 			</Col>
 			</Row>

@@ -192,6 +192,16 @@ a:active{
     height: 15em!important;
   }
 }
+@media screen and (max-width: 1475px) {
+  .imgIndice{
+    width: 16em!important;
+    height: 16em!important;
+  }
+  .nav-item li a{
+    width: 12em!important;
+    height: 16em!important;
+  }
+}
 @media screen and (max-width: 1287px) {
   .imgIndice{
     width: 20em!important;
@@ -212,6 +222,17 @@ a:active{
     height: 16em!important;
   }
 }
+@media screen and (max-width: 1025px) {
+  .imgIndice{
+    width: 14em!important;
+    height: 14em!important;
+  }
+ 
+  .nav-item li a{
+    width: 19em!important;
+    height: 15em!important;
+  }
+}
 @media screen and (max-width: 600px) {
   .imgIndice{
     width: 12em!important;
@@ -222,10 +243,30 @@ a:active{
     height: 16em!important;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 980px) {
   .imgIndice{
     width: 10em!important;
+    height: 10em!important;
+  }
+  .nav-item li a{
+    width: 12em!important;
     height: 16em!important;
+  }
+}
+@media screen and (max-width: 630px) {
+  .imgIndice{
+    width: 8em!important;
+    height: 8em!important;
+  }
+  .nav-item li a{
+    width: 10em!important;
+    height: 18em!important;
+  }
+}
+@media screen and (max-width: 535px) {
+  .imgIndice{
+    width: 6em!important;
+    height: 6em!important;
   }
   .nav-item li a{
     width: 10em!important;
@@ -233,6 +274,16 @@ a:active{
   }
 }
 
+@media screen and (max-width: 460px) {
+  .imgIndice{
+    width: 5em!important;
+    height: 6em!important;
+  }
+  .nav-item li a{
+    width: 8em!important;
+    height: 12em!important;
+  }
+}
  /*
 .imgIndice a{
   width: 100%;

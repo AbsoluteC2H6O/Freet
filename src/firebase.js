@@ -1,7 +1,8 @@
 //import * as firebase from "firebase/app";provider
 import firebase from "firebase";
-import { auth } from "firebase";
+//import { auth } from "firebase";
 import "firebase/auth";
+//import "firebase/customApp";
 var firebaseConfig = {
     apiKey: "AIzaSyDgrddccdzsRmCaQLFBC-fu6CECRs0deyg",
     authDomain: "freet-55de4.firebaseapp.com",
@@ -30,6 +31,11 @@ var fireDB=firebase.initializeApp(firebaseConfig);
 //const auth = firebase.auth();
 //const database = firebase.firestore();
 
+// Get the default bucket from a custom firebase.app.App
+//var storage = customApp.storage();
+
+// Get a non-default bucket from a custom firebase.app.App
+//var storage = customApp.storage("gs://my-custom-bucket");
 //ReactDOM.render( <FileUpload/>,document.getElementById('root'));
 //https://console.cloud.google.com/iam-admin/serviceaccounts?authuser=0&project=freet-55de4&pli=1
 export default fireDB.database().ref();

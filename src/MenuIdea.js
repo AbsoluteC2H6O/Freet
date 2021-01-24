@@ -9,42 +9,62 @@ import './MenuIdea.css';
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/storage";
-/**
- * 
- * 
- * class FileUploadNew extends Component{
-  constructor(){
-    super()
+
+
+          
+class FileUploadNew1 extends Component{
+  constructor(props){
+    super(props)
     this.state ={
       uploadValue: 0,
+      picture: null
      
-    }
+    };
+    this.handleupload = this.handleupload.bind(this);
   }
 
+  handleupload (event){
+    const file = event.target.files[0];
+    const storageRef = firebase.storage().ref(`IdeaImagenes/${file.name}`);
+    const task = storageRef.put(file);
+
+    task.on('state_change', snapshot=>{
+      let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) *100;
+      this.setState({
+        uploadValue: percentage
+      })
+    }, error =>{
+      console.log(error.message)
+    }, () =>{
+      this.setState({
+        uploadValue: 100,
+        picture: task.snapshot.downloadURL
+      });
+      });
+  }
   render(){
     return(
       <>
+      <Row>
+         <progress value={this.state.uploadValue} max="100">
+        {this.state.uploadValue} %
+      </progress>
+      </Row>
+      <Row>
+        <br/>
+      <input type='file' onChange={this.handleupload}/>
+      </Row>
+     
+      <Row>
+      <img width="520" src={this.state.picture} alt=""/>
       
-      <progress value={this.state.uploadValue} max='100'></progress>
-      <br/>
-      <input type='file' onChange={this.props.OnUpload}/>
-      
+      </Row>
+     
       </>
     );
   }
 }
-aqui va
-{
-            this.state.pictures.map(picture =>(
-              <div>
-                <img src={picture.image}/>
-                <br/>
-                <img src={picture.photoURL} alt={picture.displayName}/>
-                <span>{picture.displayName}</span>
-              </div>
-            ))
-          }
- */
+
 
 
 class FileUpload extends Component{
@@ -52,8 +72,9 @@ class FileUpload extends Component{
     super()
     this.state ={
       uploadValue: 0,
-      picture: null,
-    }
+      picture: []
+      //picture: null,
+    };
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange (event){
@@ -75,33 +96,43 @@ class FileUpload extends Component{
       this.setState({
         message: 'Archivo subido',
         picture: task.snapshot.downloadURL,
-        uploadValue: 100
-
+        uploadValue: 100,
+        
       });
-    });
+   console.log(this.state.picture) });
   }
   
   render(){
     return(
       <>
-      
-      <progress value={this.state.uploadValue} max='100'></progress>
+      <Row>
+        <br/>
+      <progress value={this.state.uploadValue} max="100"></progress>
       <br/>
+      </Row>
+      <Row>
       <input type='file' onChange={this.handleChange}/>
+      </Row>
+
+      <Row>
       {this.state.message}
       <br/>
-      <img width='100' src={this.state.picture}/>
+      {this.state.picture}
+      <img width="520" src={this.state.picture} alt=""/>
+        
+      </Row>
+     
       </>
     );
   }
 }
 class Menu extends React.Component {
+
   tituloRef = React.createRef();
   subtituloRef = React.createRef();
   imagenIdeaRef = React.createRef();
   noticiasPositivasRef = React.createRef();
   noticiasNegativasRef = React.createRef();
-
   
   render() {
     const { IdeaStore } = this.props;
@@ -119,16 +150,13 @@ class Menu extends React.Component {
           Borrar Todas Las Ideas
         </Button>
       </Row>
-      
         <Row>
         <h1 className="LyricsText">Tenemos {IdeaStore.numeroIdeas} Ideas</h1>
         </Row>
         
-       
         <Form
           onSubmit={e => {
             e.preventDefault();
-
             IdeaStore.agregarIdea({
               titulo: this.tituloRef.current.value,
               subtitulo: this.subtituloRef.current.value,
@@ -136,7 +164,6 @@ class Menu extends React.Component {
               noticiasPositivas: this.noticiasPositivasRef.current.value,
               noticiasNegativas: this.noticiasNegativasRef.current.value
             });
-
             e.target.reset();
           }}
         >
@@ -166,15 +193,33 @@ class Menu extends React.Component {
           </Col>
           
           
-
+          
           <Col md={{ span: 12, offset: 0}} 
               sm={{ span: 12, offset: 0}}
           >
-          <FileUpload/>
+          
+         {/** <FileUploadNew1/> */}
+
+				  <FileUpload/>
           {/**<FileUploadNew onUpload={this.handleUpload}/> */}
-          {/**aqui va8*/}
-          <Form.Label>URL imagen Idea: </Form.Label>
-          <Form.Control
+          {/**{
+            this.state.pictures.map(picture =>(
+              <div>
+                <img src={picture.image}/>
+                <br/>
+                <img src={picture.photoURL} alt={picture.displayName}/>
+                <span>{picture.displayName}</span>
+              </div>
+            ))
+          }*/
+          }
+          <Form.Label>Imagen de Idea: </Form.Label>
+          {/**
+           * 
+           *  
+           * 
+           */}
+         <Form.Control
             type="text"
             placeholder="Url de Idea"
             required
@@ -212,8 +257,7 @@ class Menu extends React.Component {
             >
               <h1 className="LyricsText text-center text-uppercase">
               Contenido
-              </h1>
-              
+              </h1> 
             </Form.Label>
             </Col>
             
@@ -252,20 +296,17 @@ class Menu extends React.Component {
             />
             </Col>
           </Row>
-          
         </Row>
-        <Row>
-            
+        <Row>  
           <Col
             md={{ span: 3, offset: 0}} 
             sm={{ span: 3, offset: 0}}>
-
             </Col>
             <h1> </h1>
             <Col
             md={{ span: 3, offset: 0}} 
             sm={{ span: 3, offset: 0}}>
-            
+
             <Form.Label><h1 className="LyricsText">GRAFICO</h1></Form.Label>
             <Form.Control as="select">
               <option>Diario</option>
@@ -295,12 +336,10 @@ class Menu extends React.Component {
             </Form.Control>
             
             </Col>
-            
           </Row>
 
 
           <Row>
-            
           <Col
             md={{ span: 3, offset: 0}} 
             sm={{ span: 3, offset: 0}}>
@@ -324,8 +363,7 @@ class Menu extends React.Component {
             </Col>
           </Row>
 
-          <Row>
-            
+          <Row> 
             <Col
               md={{ span: 3, offset: 0}} 
               sm={{ span: 3, offset: 0}}>
@@ -350,7 +388,6 @@ class Menu extends React.Component {
             </Row>
 
             <Row>
-            
             <Col
               md={{ span: 3, offset: 0}} 
               sm={{ span: 3, offset: 0}}>
@@ -375,7 +412,6 @@ class Menu extends React.Component {
             </Row>
 
             <Row>
-            
             <Col
               md={{ span: 3, offset: 0}} 
               sm={{ span: 3, offset: 0}}>
@@ -399,10 +435,8 @@ class Menu extends React.Component {
               </Col>
             </Row>
             <Row>
-
               <Form.Label>
-              <h1 className="LyricsText">Analisis tecnico </h1>
-                
+              <h1 className="LyricsText">Analisis tecnico </h1> 
               </Form.Label>
             </Row>
             <Row>
@@ -413,7 +447,6 @@ class Menu extends React.Component {
             <Col
               md={{ span: 3, offset: 0}} 
               sm={{ span: 3, offset: 0}}>
-            
               <Form.Control as="select">
               <option>Compra</option>
               <option>Venta</option>
@@ -432,8 +465,6 @@ class Menu extends React.Component {
               <option>1S</option>
               <option>1M</option>
               <option>1A</option>
-              
-              
             </Form.Control>
               </Col>
             </Row>
@@ -613,26 +644,20 @@ class Menu extends React.Component {
                 style={{width: '100%'}}
 
                />
+              
                </div>
               </div>
               <h2>Noticias Positivas: {idea.noticiasPositivas}</h2>
               <h2>Noticias Negativas: {idea.noticiasNegativas}</h2>
-              
-              
             </li>
             </Col>
-
-
           ))}
           </Row>
-        </ul> 
-        
-       
+        </ul>
       </Container>
     );
   }
 }
-
 export default inject("IdeaStore")(observer(Menu));
 
 

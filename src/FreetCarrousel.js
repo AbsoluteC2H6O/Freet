@@ -37,26 +37,26 @@ function FreetCarrousel(){
 				className="column1"
 			>
 			<img
-				className="d-block w-100 imgCarr"
+				className="d-block w-50 imgCarr"
 				src={Neteller}
 				alt="First slide"
-				style={{width:'20%', height:'100px'}}
+				style={{width:'10%', height:'50px'}}
 			/>
 			</Col>
 			<Col>
 			<img
-				className="d-block w-100 imgCarr"
+				className="d-block w-50 imgCarr"
 				src={Skrill}
 				alt="First slide"
-				style={{width:'20%', height:'100px'}}
+				style={{width:'10%', height:'50px'}}
 			/>
 			</Col>
 			<Col>
 			<img
-				className="d-block w-100 imgCarr"
+				className="d-block w-50 imgCarr"
 				src={Uphold}
 				alt="First slide"
-				style={{width:'20%', height:'100px'}}
+				style={{width:'10%', height:'50px', margin: '0em, 3em, 0em ,3em'}}
 			/>
 			</Col>
 			</Row>
@@ -71,26 +71,26 @@ function FreetCarrousel(){
 				className="column1"
 			>
 			<img
-				className="d-block w-100 imgCarr"
+				className="d-block w-50 imgCarr"
 				src={Bitcoin}
 				alt="First slide"
-				style={{width:'20%', height:'100px'}}
+				style={{width:'10%', height:'50px'}}
 			/>
 			</Col>
 			<Col>
 			<img
-				className="d-block w-100 imgCarr"
+				className="d-block w-50 imgCarr"
 				src={TransferenciaB}
 				alt="First slide"
-				style={{width:'20%', height:'100px'}}
+				style={{width:'10%', height:'50px'}}
 			/>
 			</Col>
 			<Col>
 			<img
-				className="d-block w-100 imgCarr"
+				className="d-block w-50 imgCarr"
 				src={Airtm}
 				alt="First slide"
-				style={{width:'20%', height:'100px'}}
+				style={{width:'10%', height:'50px'}}
 			/>
 			</Col>
 			</Row>
@@ -123,7 +123,7 @@ export default FreetCarrousel;
 				<Carousel>                    
 				<Carousel.Item interval={1000}>
 					<img className="carousel" width={400} height={200}
-						src={IqOption} className="img-fluid d-block w-100" alt="broker"
+						src={IqOption} className="img-fluid d-block w-50" alt="broker"
 					/>
 					<Carousel.Caption>
 						<h3>IQ Option</h3>
@@ -132,14 +132,14 @@ export default FreetCarrousel;
 						<Carousel.Item interval={500}>
 							<img className="carousel" width={400} height={200}
 								src={Etoro} 
-								className="img-fluid d-block w-100" alt="broker"
+								className="img-fluid d-block w-50" alt="broker"
 							/>
 							<Carousel.Caption>
 							</Carousel.Caption>
 							</Carousel.Item>
 							<Carousel.Item>
 								<img className="carousel" width={400} height={200}
-									src={Xm} className="img-fluid d-block w-100" alt="broker"
+									src={Xm} className="img-fluid d-block w-50" alt="broker"
 								/>
 							<Carousel.Caption>
 							</Carousel.Caption>

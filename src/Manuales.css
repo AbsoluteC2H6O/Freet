@@ -84,6 +84,23 @@
     margin-top: 2em;
     
   }
+  .fontContac{
+    background-color: rgb(30, 177, 162) !important;
+  }
+  .fontContac2{
+    background-color: rgba(226, 225, 225, 0.418)!important;
+   
+}
+  .LyricsTimelineSubsContact{
+    font-family: Timeline;
+    font-size: 1em !important;
+    color:black;
+    text-shadow: 1px 1px #fff, 2px 2px #1b1a1a;
+    font-weight: normal;
+    line-height: 2em;
+    letter-spacing: 0.2em;
+    margin-top: 2em;
+  }
   .LyricsTimelineSubs2{
     font-family: Arial;
     font-size: 1em;
@@ -92,6 +109,13 @@
     font-weight: bolder;
 
 
+  }
+  .LyricsTimelineSubs3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    color: black;
+    font-stretch: extra-condensed;
+    font-weight: bolder;
   }
 .hrs{
     color: rgb(230, 180, 89);
@@ -177,7 +201,10 @@ li{
   margin-bottom: 1em!important;
   margin-top: 1.5em!important;
 }
-
+.marginL3{
+  margin-left: 0.5em;
+  margin-right: 0.5em !important;
+}
 .ManualLyrics4{
   font-family: Impacted, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 5em;
@@ -201,4 +228,9 @@ li{
 /* Darker background on mouse-over */
 .btn:hover {
   background-color:rgba(62, 122, 106, 0.829);
+}
+
+.marginStar{
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }

@@ -81,9 +81,9 @@ class FileUpload extends Component{
     const file = event.target.files[0];
     //CatalogosDescargables
     const storageRef = firebase.storage().ref(`IdeaImagenes/${file.name}`);
-    const task = storageRef.put(file);
+    const uploadTask = storageRef.put(file);
 
-    task.on('state_change', (snapshot) => {
+    uploadTask.on('state_change', (snapshot) => {
       let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       this.setState({
         uploadValue: percentage
@@ -94,9 +94,13 @@ class FileUpload extends Component{
       })
     }, () =>{
       this.setState({
-        message: 'Archivo subido',
-        picture: task.snapshot.downloadURL,
+        message: 'Archivo subido', 
         uploadValue: 100,
+       // picture: uploadTask.snapshot.downloadURL
+        picture: uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+          console.log('File available at', downloadURL);})
+        
+        
         
       });
    console.log(this.state.picture) });

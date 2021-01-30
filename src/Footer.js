@@ -1,11 +1,197 @@
-import React, {Component} from "react";
-import { Container, Tabs, Tab, Row, Col} from 'react-bootstrap';
+import React, {Component, useState, useEffect} from "react";
+import { Container, Tabs, Tab, Row, Col,Button} from 'react-bootstrap';
 import './App.css';
 import FreetCarrousel from './FreetCarrousel';
-class Footer extends Component{
+import Contacto from './Contacto';
+
+function Footer(){
+  const [key, setKey] = useState('Advertencia');
+ 
+  {/**useEffect(() =>{
+    function handleStatusChange(status) {
+      setKey(status.key);
+    }
+  }); 
+  getContact(){
+    return(<><Contacto/></>);
+  }
+  useEffect(() => {
+    if(key === 'Contact'){
+      getContact()
+    }
+    
+  });
+*/}
+/**  useEffect(() => {
+    const key = document.body.clientWidth
+    setKey(key)
+
+    updateKey
+    return () => {
+      window.removeEventListener("resize",updateKey)
+    }
+  }); */
+  if(key === 'Contacto'){
+    return <> <Contacto/><Col
+                    className="LyricsTextFooter LyricsTextPago"
+                    xs={{ span: 10, offset: 1}}
+                    lg={{ span: 10, offset: 1}}
+                    md={{ span: 10, offset: 1}}
+                    sm={{ span: 10, offset: 1}}
+                  >
+                 <h4 className="text-center ManualLyrics4">METODOS DE PAGO</h4>
+               
+              
+                 </Col>
+                 <Col
+                    className="justify-content-center text-center"
+                    xs={{ span: 10, offset: 1}}
+                    lg={{ span: 8, offset: 2}}
+                    md={{ span: 8, offset: 2}}
+                    sm={{ span: 10, offset: 1}}
+                  >
+
+                     
+                  </Col>
+               <FreetCarrousel/>    
+              <Container fluid className="LyricsTextFooter" variant="dark">
+              <Row >
+                  
+                
+                 </Row>
+
+               <Row className="justify-content-center">
+               <p className="LyricsTextFooter marginIcons"><i className="fa fa-twitter-square" aria-hidden="true"></i></p>
+               <p className="LyricsTextFooter marginIcons"> <i className="fa fa-facebook-square" aria-hidden="true"></i></p>
+               <p className="LyricsTextFooter marginIcons"> <i className="fa fa-instagram" aria-hidden="true"></i></p>
+               
+               </Row>
+               <Tabs className="justify-content-center" defaultActiveKey="Advertencia" id="uncontrolled-tab-example"
+               
+               >
+                 
+                 <Tab eventKey="Contacto" title="Contacto" onSelect={() => setKey('Contacto')}> 
+                </Tab>
+                <Tab eventKey="Nosotros" title="Nosotros" onSelect={() => setKey('Nosotros')}> 
+                </Tab>
+                <Tab eventKey="Terminos" title="Terminos" onSelect={() => setKey('Terminos')}>
+                </Tab>
+                <Tab className="text-center" eventKey="Advertencia" title="ADVERTENCIA DE RIESGO:" onSelect={() => setKey('Advertencia')}>
+                  <p>2020-2021 Freet Ltd.Todos los derechos reservados</p>
+                  <p>El contenido de este sitio web no debe interpretarse como un objeto de inversión, recuerda que operar con instrumentos CFDs es altamente riesgoso y</p>
+                  <p>puede causar la perdida de todo tu capital. Por lo tanto, no debe invertir o arriesgar dinero que no pueda permitirse perder. Debe asegurarse de que</p>
+                  <p>comprende todos los riesgos.</p>
+                  <p>Las publicaciones en este sitio web están protegidas por derecho de autor, cualquier copia, reproducción, republicación y recursos de cualquier material</p>
+                  <p>de la pagina esta totalmente prohibido.</p>
+                  <hr className="LyricsTextFooter"/>
+                
+                </Tab>
+                </Tabs>
+                {/**<Button onClick={() => this.handleChangeContact()}>contacto</Button> */}
+               
+              
+             
+              </Container></>
+  }else{
+  return(
+    <>
+    
+   
+    <Col
+      className="LyricsTextFooter LyricsTextPago"
+      xs={{ span: 10, offset: 1}}
+      lg={{ span: 10, offset: 1}}
+      md={{ span: 10, offset: 1}}
+      sm={{ span: 10, offset: 1}}
+    >
+    <h4 className="text-center ManualLyrics4">METODOS DE PAGO</h4>
+  
+
+    </Col>
+    <Col
+      className="justify-content-center text-center"
+      xs={{ span: 10, offset: 1}}
+      lg={{ span: 8, offset: 2}}
+      md={{ span: 8, offset: 2}}
+      sm={{ span: 10, offset: 1}}
+    >
+
+        
+    </Col>
+  <FreetCarrousel/>    
+<Container fluid className="LyricsTextFooter" variant="dark">
+<Row >
+    
+  
+    </Row>
+
+  <Row className="justify-content-center">
+  <p className="LyricsTextFooter marginIcons"><i className="fa fa-twitter-square" aria-hidden="true"></i></p>
+  <p className="LyricsTextFooter marginIcons"> <i className="fa fa-facebook-square" aria-hidden="true"></i></p>
+  <p className="LyricsTextFooter marginIcons"> <i className="fa fa-instagram" aria-hidden="true"></i></p>
+  
+  </Row>
+  <Tabs className="justify-content-center" 
+  defaultActiveKey="Advertencia" 
+  id="uncontrolled-tab-example"
+  onSelect={(k) => setKey(k)}>
+    
+  <Tab eventKey="Contacto" title="Contacto" onSelect={() => setKey('Contacto')}> 
+  </Tab>
+  <Tab eventKey="Nosotros" title="Nosotros" onSelect={() => setKey('Nosotros')}> 
+  </Tab>
+  <Tab eventKey="Terminos" title="Terminos" onSelect={() => setKey('Terminos')}>
+  </Tab>
+  <Tab className="text-center" eventKey="Advertencia" title="ADVERTENCIA DE RIESGO:" onSelect={() => setKey('Advertencia')}>
+    <p>2020-2021 Freet Ltd.Todos los derechos reservados</p>
+    <p>El contenido de este sitio web no debe interpretarse como un objeto de inversión, recuerda que operar con instrumentos CFDs es altamente riesgoso y</p>
+    <p>puede causar la perdida de todo tu capital. Por lo tanto, no debe invertir o arriesgar dinero que no pueda permitirse perder. Debe asegurarse de que</p>
+    <p>comprende todos los riesgos.</p>
+    <p>Las publicaciones en este sitio web están protegidas por derecho de autor, cualquier copia, reproducción, republicación y recursos de cualquier material</p>
+    <p>de la pagina esta totalmente prohibido.</p>
+    <hr className="LyricsTextFooter"/>
+  
+  </Tab>
+  </Tabs>
+  </Container>
+    </>
+  );
+  }
+}
+class Footer1 extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      key: 'Advertencia'
+    };
+	 //this.handleChangeContact = this.handleChangeContact.bind(this);
+	 }
+
+  handleChangeContact(key){
+    this.setState({
+      key: key
+    });
+  }
+  
+      renderContacto(){
+       
+          const {key} = this.state;
+          if(key){
+            return(
+              <>
+              <Contacto/>
+               </>
+            );
+          }
+         
+      }
       render(){
+        
+			
           return(
               <>
+              
+				     {this.renderContacto()}
               <Col
                     className="LyricsTextFooter LyricsTextPago"
                     xs={{ span: 10, offset: 1}}
@@ -40,15 +226,17 @@ class Footer extends Component{
                <p className="LyricsTextFooter marginIcons"> <i className="fa fa-instagram" aria-hidden="true"></i></p>
                
                </Row>
-               <Tabs className="justify-content-center" defaultActiveKey="Advertencia de riesgo" id="uncontrolled-tab-example">
+               <Tabs className="justify-content-center" defaultActiveKey="Advertencia" id="uncontrolled-tab-example"
+               on onSelect={() => this.handleChangeContact()} Select={() => this.handleChangeContact()}
+               >
                  
-               <Tab eventKey="Contacto" title="Contacto"> 
+               <Tab eventKey="Contacto" title="Contacto" > 
                </Tab>
-               <Tab eventKey="Nosotros" title="Nosotros"> 
+               <Tab eventKey="Nosotros" title="Nosotros" onClick={this.handleChangeContact2}> 
                </Tab>
-               <Tab eventKey="Terminos y condiciones" title="Terminos">
+               <Tab eventKey="Terminos" title="Terminos" onClick={this.handleChangeContact3}>
                </Tab>
-               <Tab className="text-center" eventKey="Advertencia de riesgo" title="ADVERTENCIA DE RIESGO:">
+               <Tab className="text-center" eventKey="Advertencia" title="ADVERTENCIA DE RIESGO:" onClick={this.handleChangeContact4} >
                  <p>2020-2021 Freet Ltd.Todos los derechos reservados</p>
                  <p>El contenido de este sitio web no debe interpretarse como un objeto de inversión, recuerda que operar con instrumentos CFDs es altamente riesgoso y</p>
                  <p>puede causar la perdida de todo tu capital. Por lo tanto, no debe invertir o arriesgar dinero que no pueda permitirse perder. Debe asegurarse de que</p>
@@ -59,7 +247,7 @@ class Footer extends Component{
                
                </Tab>
                </Tabs>
-                
+                {/**<Button onClick={() => this.handleChangeContact()}>contacto</Button> */}
                
               
              

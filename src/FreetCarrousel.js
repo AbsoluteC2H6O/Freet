@@ -1,8 +1,6 @@
-import React, {Component,useState} from 'react';
-import IqOption from "./iq-option-logo1.png"
-import Etoro from "./1200px-Etoro_logo.svg.png"
-import Xm from "./logo_principal_xm.jpg"
-import {Carousel,Container,Row,Col,Jumbotron} from 'react-bootstrap';
+import React, {useState} from 'react';
+
+import {Carousel,Container,Row,Col} from 'react-bootstrap';
 import './FreetCarrousel.css';
 import Airtm from "./piePagina/Airtm.png";
 import Bitcoin from "./piePagina/Bitcoin.png";

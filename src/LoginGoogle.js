@@ -189,8 +189,9 @@ class LoginGoogle extends Component{
             <div>
             <img src={this.state.user.photoURL} alt={this.state.user.displayName}></img>
             <p>Hola {this.state.user.displayName}</p>
+           
             <Button onClick={this.handleLogout}>Salir</Button>
-            <FileUploadNew onUpload={this.handleUpload}/>
+             {/**<FileUploadNew onUpload={this.handleUpload}/>
 
             {
             this.state.pictures.map(picture => (
@@ -204,7 +205,7 @@ class LoginGoogle extends Component{
                 </figure>
               </div>
             )).reverse()
-          }
+          } */}
             </div>
             </>
             );

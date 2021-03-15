@@ -45,7 +45,7 @@ class ComponentPart1 extends Component{
               
                 <TradingMiniApp/>   
                 <NavBar/>
-            <Switch>
+                <Switch>
                 <Route exact path="/AnalisisGeneral" component={AnalisisGeneral}/>
                       <Route exact path="/DatosTecnicos" component={DatosTecnicos}/>
                       <Route exact path="/GraficosTr" component={GraficosTr}/>

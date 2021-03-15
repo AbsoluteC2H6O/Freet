@@ -42,57 +42,75 @@ class NavBar extends Component{
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent1">
                     <ul className="navbar-nav mr-auto">
+
                     <li className="nav-item dropdown">
-                         
                             <a className="nav-link dropdown-toggle LyricsTitleNav1 text-uppercase " href="#forex" id="navbarDropdown" role="button" 
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 forex
-                            </a>        
-                       
+                            </a>  
                         <div className="dropdown-menu navDcont" aria-labelledby="navbarDropdown">
-                        <NavLink to="/AnalisisGeneral" activeclassName="active">
-                            <a className="dropdown-item LyricsText" href="#AnalisisGeneral">Analisis General</a>
+                        <NavLink  className="dropdown-item LyricsText" href="#AnalisisGeneral" to="/AnalisisGeneral" activeclassname="active">
+                            Analisis General
                         </NavLink>
-                        <NavLink to="/datosTecnicos" activeclassName="active">
-                            <a className="dropdown-item LyricsText" href="#DatosTecnicos">Datos Tecnicos</a>
+                        <NavLink className="dropdown-item LyricsText" href="#DatosTecnicos" to="/datosTecnicos" activeclassname="active">
+                           Datos Tecnicos
                         </NavLink>
-                        <NavLink to="/GraficosTr" activeclassName="active">
-                            <a className="dropdown-item LyricsText" href="#GraficosTR">Graficos TR</a>
+                        <NavLink className="dropdown-item LyricsText" href="#GraficosTR" to="/GraficosTr" activeclassname="active">
+                            Graficos TR
                         </NavLink>
                         <div className="dropdown-divider"></div>
-                        <NavLink to="/otros" activeclassName="active">
-                            <a className="dropdown-item LyricsText" href="#Otros">Otros</a>
+                        <NavLink className="dropdown-item LyricsText" href="#Otros" to="/otros" activeclassname="active">
+                           Otros
                         </NavLink>
                         </div>
-                    </li>     
+                    </li>   
+
+                        
                     <li className="nav-item">
-                    <NavLink to="/criptomonedas" activeclassName="active">
-                        <a className="nav-link text-uppercase LyricsTitleNav1 " href="#criptomonedas">criptomonedas</a>
+                    <NavLink className="nav-link text-uppercase LyricsTitleNav1 " href="#criptomonedas" to="/criptomonedas" activeclassname="active">
+                        criptomonedas
                     </NavLink>
                     </li>
                     <li>
-                    <NavLink to="/valores" activeclassName="active">
-                        <a className="nav-link text-uppercase LyricsTitleNav1" href="#valores">valores</a>
+                    <NavLink className="nav-link text-uppercase LyricsTitleNav1" href="#valores" to="/valores" activeclassname="active">
+                        valores
                     </NavLink>
                     </li>  
+
+                   { /**  <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle LyricsTitleNav1 text-uppercase " href="#Commodities" id="navbarDropdown" role="button" 
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <NavLink className="nav-link text-uppercase LyricsTitleNav1" href="#commodities" to="/commodities" activeclassname="active">
+                            commodities
+                            </NavLink>
+                            </a>  
+                        <div className="dropdown-menu navDcont" aria-labelledby="navbarDropdown">
+                        <NavLink className="dropdown-item LyricsText" href="#DatosTecnicosC" activeclassname="active">
+                           Datos Tecnicos
+                        </NavLink>
+                        <NavLink  className="dropdown-item LyricsText" href="#GraficosC"  activeclassname="active">
+                           Graficos
+                        </NavLink>
+                        </div>
+                    </li> */}
                     <li>
-                    <NavLink to="/commodities" activeclassName="active">
-                        <a className="nav-link text-uppercase LyricsTitleNav1" href="#commodities">commodities</a>
+                    <NavLink className="nav-link text-uppercase LyricsTitleNav1" href="#commodities" to="/commodities" activeclassname="active">
+                       commodities
                     </NavLink>
-                    </li>
+                    </li> 
                     <li>
-                    <NavLink to="/calendarioeconomico" activeclassName="active">
-                        <a className="nav-link text-uppercase LyricsTitleNav1" href="#calendarioeconomico">calendario economico</a>
+                    <NavLink className="nav-link text-uppercase LyricsTitleNav1" href="#calendarioeconomico" to="/calendarioeconomico" activeclassname="active">
+                       calendario economico
                     </NavLink>
                     </li>
                     <li className="nav-item">
                     <div className="navbar22">
                         <div className="subnav">
-                        <button className="subnavbtn text-uppercase LyricsTitleNav1">Educacion <i class="fa fa-caret-down"></i></button>
-                            <div className="subnav-content">z
+                        <button className="subnavbtn text-uppercase LyricsTitleNav1">Educacion <i className="fa fa-caret-down"></i></button>
+                            <div className="subnav-content">
                             <li className="nav-item img4">
-                        <NavLink to="/ForexManual" activeclassName="active">
-                            <a href="#ForexManual"><img 
+                        <NavLink href="#ForexManual" to="/ForexManual" activeclassname="active">
+                            <img 
                             src={Forex} 
                             className="img-fluid img1 imgIndice " 
                             alt="ForexManual" 
@@ -100,49 +118,49 @@ class NavBar extends Component{
                             onClick={this.handleClick}
                             >
                             
-                        </img></a>
+                        </img>
                         </NavLink>
                         </li>
                         <li className="nav-item img4">
-                        <NavLink to="/CriptomonedasManual" activeclassName="active">
-                            <a href="#CriptomonedasManual"><img 
+                        <NavLink href="#CriptomonedasManual" to="/CriptomonedasManual" activeclassname="active">
+                            <img 
                             src={Criptomonedas} 
                             className="img-fluid img1 imgIndice " 
                             alt="CriptomonedasManual" 
                             style={{width: '96.5%'}}>
-                        </img></a>
+                        </img>
                         </NavLink>
                         </li>
                         <li className="nav-item img4">
-                        <NavLink to="/ValoresManual" activeclassName="active">
-                            <a href="#package"><img 
+                        <NavLink href="#package" to="/ValoresManual" activeclassname="active">
+                            <img 
                             src={Valores} 
                             className="img-fluid img1 imgIndice " 
                             alt="ValoresManual" 
                             style={{width: '96.5%'}}>
-                        </img></a>
+                        </img>
                         </NavLink>
                         </li>
                         <li className="nav-item img4">
-                        <NavLink to="/CommoditiesManual" activeclassName="active">
-                            <a href="#CommoditiesManual"><img 
+                        <NavLink href="#CommoditiesManual" to="/CommoditiesManual" activeclassname="active">
+                            <img 
                             src={Commodities} 
                             className="img-fluid img1 imgIndice" 
                             alt="CommoditiesManual" 
                             style={{width: '100%'}}>
-                        </img></a>
+                        </img>
                         </NavLink>
                         </li>
                         <li className="nav-item img4">
-                        <NavLink to="/TradingManual" activeclassName="active">
-                        <a href="#TradingManual">
+                        <NavLink href="#TradingManual" to="/TradingManual" activeclassname="active">
+                       
                         <img 
                             src={Trading} 
                             className="img-fluid img1 imgIndice " 
                             alt="TradingManual" 
                             style={{width: '100%'}}>
                         </img>
-                        </a>
+                        
                         </NavLink>
                         </li>
                             </div>
@@ -150,13 +168,13 @@ class NavBar extends Component{
                     </div>
                     </li>
                     <li>
-                    <NavLink to="/planes" activeclassName="active">
-                        <a className="nav-link text-uppercase LyricsTitleNav1" href="#planes">planes</a>
+                    <NavLink className="nav-link text-uppercase LyricsTitleNav1" href="#planes" to="/planes" activeclassname="active">
+                        planes
                     </NavLink>
                     </li>
                     <li>
-                    <NavLink to="/sobrenosotros" activeclassName="active">
-                        <a className="nav-link text-uppercase LyricsTitleNav1" href="#sobrenosotros">sobre nosotros</a>
+                    <NavLink className="nav-link text-uppercase LyricsTitleNav1" href="#sobrenosotros" to="/sobrenosotros" activeclassname="active">
+                        sobre nosotros
                     </NavLink>
                     </li>
                     </ul>

@@ -199,7 +199,7 @@ class Footer1 extends Component{
                     md={{ span: 10, offset: 1}}
                     sm={{ span: 10, offset: 1}}
                   >
-                 <h4 className="text-center ManualLyrics4">METODOS DE PAGO</h4>
+                 <p className="text-center ManualLyrics5">METODOS DE PAGO</p>
                
               
                  </Col>
@@ -219,7 +219,7 @@ class Footer1 extends Component{
                   
                 
                  </Row>
-
+{/** letras blancas adevertencia de riesgo centrada no es boton y visuales que se cambian en cada boton de pie de pagina */}
                <Row className="justify-content-center">
                <p className="LyricsTextFooter marginIcons"><i className="fa fa-twitter-square" aria-hidden="true"></i></p>
                <p className="LyricsTextFooter marginIcons"> <i className="fa fa-facebook-square" aria-hidden="true"></i></p>
@@ -244,6 +244,7 @@ class Footer1 extends Component{
                  <p>Las publicaciones en este sitio web están protegidas por derecho de autor, cualquier copia, reproducción, republicación y recursos de cualquier material</p>
                  <p>de la pagina esta totalmente prohibido.</p>
                  <hr className="LyricsTextFooter"/>
+                 <br/>
                
                </Tab>
                </Tabs>

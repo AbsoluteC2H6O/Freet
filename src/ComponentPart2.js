@@ -9,7 +9,7 @@ import {
   Route,
 } from "react-router-dom";
 import ideas from './ideas';
-import resultados from './resultados';
+import Resultados from './Resultados';
 import ratio from './ratio';
 import calculadoraderiesgo from './calculadoraderiesgo';
 import Graficoavanzado from './Graficoavanzado';
@@ -166,7 +166,7 @@ class ComponentPart2 extends Component{
                 <TickerTape/>
                 <Switch>
                       <Route default exact path="/ideas" component={ideas}/>
-                      <Route exact path="/resultados" component={resultados}/>
+                      <Route exact path="/resultados" component={Resultados}/>
                       <Route exact path="/ratio" component={ratio}/>
                       <Route exact path="/calculadoraderiesgo" component={calculadoraderiesgo}/>
                       <Route exact path="/graficoavanzado" component={Graficoavanzado}/>

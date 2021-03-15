@@ -34,7 +34,7 @@
 }
 .LyricsTextFooter{
   font-family: Arial;
-  font-size: 0.9em;
+  font-size: 0.6em;
   color: white;
   text-align: justify;
   line-height: 1em;
@@ -113,7 +113,24 @@ a .LyricsTextFooter{
 .LyricsTextPago{
   background-color: black!important;
 }
+.graficoAvanzado{
+  margin: 0!important;
+  padding: 2em;
+  background-color:  rgba(226, 225, 225, 0.418);
+  height: 800 !important;
+}
+.Line{
+  color: black;
+  background-color: black;
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 10px;
+}
 /*
+
 
 
 

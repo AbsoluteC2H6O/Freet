@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, useState, useEffect } from "react";
 import sobrenosotros from './sobrenosotros/sobrenosotros.png';
 import {Container, Row, Col, Form, Button} from "react-bootstrap";
 import './App.css';
@@ -7,6 +7,193 @@ import './Content1.css';
 import './Manuales.css';
 import ContactoF from './Contacto/woman.jpg'
 
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/storage";
+//https://www.youtube.com/watch?v=pE-sp2A9j-c
+
+const Contact2 = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [loader, setLoader] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoader(true);
+
+    firebase.collection("contacts")
+      .add({
+        name: name,
+        email: email,
+        message: message,
+      })
+      .then(() => {
+        setLoader(false);
+        alert("Your message has been submitted👍");
+      })
+      .catch((error) => {
+        alert(error.message);
+        setLoader(false);
+      });
+
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
+
+  return (
+    <form className="form" onSubmit={handleSubmit}>
+      <h1>Contact Us 🤳</h1>
+
+      <label>Name</label>
+      <input
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+
+      <label>Email</label>
+      <input
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+
+      <label>Message</label>
+      <textarea
+        placeholder="Message"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+      ></textarea>
+
+      <button
+        type="submit"
+        style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
+      >
+        Submit
+      </button>
+    </form>
+  );
+};
+
+
+
+class Mail extends Component {
+
+    // inicializamos nuestro estado inicial
+    constructor(props) {
+      super(props);
+      this.state = {
+        form: [],
+        alert: false,
+        alertData: {}
+      };
+    }
+  
+    // Mostrar una alerta cuando se envia el formulario
+    showAlert(type, message) {
+      this.setState({
+        alert: true,
+        alertData: { type, message }
+      });
+      setTimeout(() => {
+        this.setState({ alert: false });
+      }, 4000)
+    }
+  
+    // Con esta funcion borramos todos los elementos del formulario
+    resetForm() {
+      this.refs.contactForm.reset();
+    }
+  
+    // Funcion para enviar la informacion del formulario a Firebase Database
+    sendMessage(e) {
+      // Detiene la acción predeterminada del elemento
+      e.preventDefault();
+      
+      // Creamos un objeto con los valores obtenidos de los inputs
+      const params = {
+        name: this.inputName.value,
+        email: this.inputEmail.value,
+        city: this.inputCity.value,
+        phone: this.inputPhone.value,
+        message: this.textAreaMessage.value
+      };
+      
+      // Validamos que no se encuentren vacios los principales elementos de nuestro formulario
+      if (params.name && params.email && params.phone && params.phone && params.message) {
+        // enviamos nuestro objeto "params" a firebase database
+        firebase.database().ref('form').push(params).then(() => {
+          // Si todo es correcto, actualizamos nuestro estado para mostrar una alerta.
+          this.showAlert('success', 'Your message was sent successfull');
+        }).catch(() => {
+          // Si ha ocurrido un error, actualizamos nuestro estado para mostrar el error 
+          this.showAlert('danger', 'Your message could not be sent');
+        });
+        // limpiamos nuestro formulario llamando la funcion resetform
+        this.resetForm();
+      } else {
+        // En caso de no llenar los elementos necesario despliega un mensaje de alerta
+        this.showAlert('warning', 'Please fill the form');
+      };
+    }
+  
+    render() {
+      return (
+        <div>
+          {this.state.alert && <div className={`alert alert-${this.state.alertData.type}`} role='alert'>
+            <div className='container'>
+              {this.state.alertData.message}
+            </div>
+          </div>}
+          <div className='container' style={{ padding: `40px 0px` }}>
+            <div className='row'>
+              <div className='col-sm-4'>
+                <h2>Contact Form</h2>
+                <form onSubmit={this.sendMessage.bind(this)} ref='contactForm' >
+                  <div className='form-group'>
+                    <label htmlFor='name'>Name</label>
+                    <input type='text' className='form-control' id='name' 
+                      placeholder='Name' ref={name => this.inputName = name} 
+                    />
+                  </div>
+                  <div className='form-group'>
+                    <label htmlFor='exampleInputEmail1'>Email</label>
+                    <input type='email' className='form-control' id='email' 
+                      placeholder='Email' ref={email => this.inputEmail = email} 
+                    />
+                  </div>
+                  <div className='form-group'>
+                    <label htmlFor='city'>City</label>
+                    <select className='form-control' id='city' ref={city => this.inputCity = city}>
+                      <option value='México'>México</option>
+                      <option value='Guadalajara'>Guadalajara</option>
+                      <option value='Monterrey'>Monterrey</option>
+                    </select>
+                  </div>
+                  <div className='form-group'>
+                    <label htmlFor='phone'>Phone</label>
+                    <input type='number' className='form-control' id='phone' 
+                      placeholder='+52 1' ref={phone => this.inputPhone = phone} 
+                    />
+                  </div>
+                  <div className='form-group'>
+                    <label htmlFor='message'>Message</label>
+                    <textarea className='form-control' id='message' 
+                      rows='3' ref={message => this.textAreaMessage = message}>
+                    </textarea>
+                  </div>
+                  <button type='submit' className='btn btn-primary'>Send</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
 class Contacto extends Component{
     render(){
         return(
@@ -69,6 +256,7 @@ class Contacto extends Component{
                     md={{ span: 4, offset: 0}}
                     sm={{ span: 12, offset: 0}}
                 >
+                  {/*subir tamano de letra e iconos*/}
                  <h1 className="text-center text-uppercase LyricsTimelineSubsContact">LLAMANOS</h1>
                 <br/>
                 <p  style={{color: 'blue'}} className="text-center LyricsText marginLyrcisS">(+58) 412 657 3181</p>

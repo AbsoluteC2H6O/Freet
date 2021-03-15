@@ -15,11 +15,6 @@ import Petroleo from './Manuales/Commodities/Petroleo.png';
 import PetroleoWTI from './Manuales/Commodities/PetroleoWTI.png';
 import Plata from './Manuales/Commodities/PLATA.png';
 import Puntos from './Manuales/Commodities/Puntos.png';
-import Deco1 from './Manuales/Deco1.jpg';
-import Deco2 from './Manuales/Deco2.jpg';
-import Deco3 from './Manuales/Deco3.jpg';
-
-
 
 class CommoditiesManual extends Component{
       render(){

@@ -31,7 +31,7 @@
     user-select: none;
   }
   .ManualFont{
-    background-color: rgba(68, 173, 173, 0.877);
+    background-color: rgb(179, 205, 205);
     margin-top: 5px;
     margin-right: 10px;
 }
@@ -81,7 +81,7 @@
     font-weight: normal;
     line-height: 2em;
     letter-spacing: 0.2em;
-    margin-top: 2em;
+    margin-top: 0.5em;
     
   }
   .fontContac{
@@ -116,6 +116,14 @@
     color: black;
     font-stretch: extra-condensed;
     font-weight: bolder;
+  }
+  .LyricsTimelineSubs4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.6em!important;
+    color: black;
+    font-stretch: extra-condensed;
+    font-weight: bolder;
+    margin-left: 0.4em;
   }
 .hrs{
     color: rgb(230, 180, 89);
@@ -211,8 +219,31 @@ li{
   color: white;
   text-shadow: 1px 1px #fff, 4px 4px #1b1a1a;
 }
+.ManualLyrics5{
+  font-family: Impacted, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 2em!important;
+  color: white;
+  text-shadow: 1px 1px #fff, 4px 4px #1b1a1a;
+}
+.ManualLyrics6{
+  font-family: Impacted, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1.5em!important;
+  color: white;
+  text-shadow: 1px 1px #fff, 4px 4px #1b1a1a;
+  background-color: rgba(152, 197, 80);
+}
+.ManualLyrics7{
+  font-family: Impacted, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 3em;
+  color: white;
+  text-shadow: 1px 1px #fff, 4px 4px #1b1a1a;
+}
 .ManualLyrics4Font{
   background-color: rgba(62, 122, 106, 0.829);
+  
+}
+.ManualLyrics7Font{
+  background-color: black;
   
 }
 
@@ -234,3 +265,4 @@ li{
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
+

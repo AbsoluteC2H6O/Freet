@@ -8,7 +8,17 @@ import './Manuales.css';
 import { FaStarHalfAlt, FaStar } from "react-icons/fa";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import Logo1 from "./LogoFreet.png";
+/**
+ * 
+ * 
+ * 
+ * Step 1: Include the SDK para JavaScript on your page once, ideally right after the opening body tag.
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0" nonce="Kd1ZApC8"></script>
+Step 2: Place this code wherever you want the plugin to appear on your page.
+<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"></div>
+ */
   class SobreNosotros extends Component{
     constructor(props){
       super(props);
@@ -27,7 +37,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
                 
                   <Row>
                     <Col
-                    className="fontContac2"> 
+                    > 
                     <img 
                       src={sobrenosotros} 
                       className="img-fluid " 
@@ -36,17 +46,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
                     </img>
                     </Col>
                     <Col
-                    className="fontContac2"
+                   
                     >
                     <pre>
                       
                       </pre> 
                     <h1 className="text-center text-uppercase LyricsTimelineSubs">NUESTRA EMPRESA</h1>
-                    <p className="text-center LyricsText marginLyrcisS">Somos una plataforma web y academia de inversiones con base en latino américa enfocada al estudio de los mercados financieros y dedicada principalmente a la educación y aprendizaje.</p>
+                    <p className="text-center LyricsText ">Somos una plataforma web y academia de inversiones con base en latino américa enfocada al estudio de los mercados financieros y dedicada principalmente a la educación y aprendizaje.</p>
                     <pre>
                       
                       </pre>
-                    <p className="text-center LyricsText marginLyrcisS">Nuestro contenido web es garantizar la fácil comprensión de todos nuestros lectores de una manera simple, rápida e ilustrativa, además podrán seguir en tiempo real las gráficas de cada uno de los mercados financieros, calendario económico, datos técnicos, horarios de apertura, ideas y utilizar nuestra potente calculadora de riesgo.</p>
+                    <p className="text-center LyricsText ">Nuestro contenido web es garantizar la fácil comprensión de todos nuestros lectores de una manera simple, rápida e ilustrativa, además podrán seguir en tiempo real las gráficas de cada uno de los mercados financieros, calendario económico, datos técnicos, horarios de apertura, ideas y utilizar nuestra potente calculadora de riesgo.</p>
+                    {/**correcion del logo tamano y cosas
+                     * 
+                     */}
+                    <img 
+                      src={Logo1} 
+                      className="img-fluid " 
+                      alt="SobreNosotros1" 
+                      >
+                    </img>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <hr className="Line"/>
                     </Col>
                     </Row>
                     <pre>
@@ -61,7 +87,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
                       sm={{ span: 9, offset: 1}}
                     >
                    <h1 className="text-center text-uppercase LyricsTimelineSubs"> ¿PORQUE ELEGIRNOS?</h1>
-                   <p className="text-center LyricsText marginLyrcisS">Somos un grupo de jóvenes emprendedores y apasionados por el trading, para ello diseñamos una plataforma web donde podrán visualizar las ideas publicadas con un análisis completo del mercado y verificadas por una ratio de efectividad, de esta manera garantizar nuestra reputación y confianza hacia nuestros usuarios.</p>
+                   <p className="text-center LyricsText ">Somos un grupo de jóvenes emprendedores y apasionados por el trading, para ello diseñamos una plataforma web donde podrán visualizar las ideas publicadas con un análisis completo del mercado y verificadas por una ratio de efectividad, de esta manera garantizar nuestra reputación y confianza hacia nuestros usuarios.</p>
                     </Col>
 
                     
@@ -78,16 +104,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
                       sm={{ span: 9, offset: 1}}
                     >
                     <h1 className="text-center text-uppercase LyricsTimelineSubs">¿QUE OFRECEMOS?</h1>
-                    <p className="text-center LyricsText marginLyrcisS">Nuestra academia ofrece la posibilidad de aprender el trading desde cero de una manera fácil, rápida y dinámica a un precio totalmente accesible a diferencias de otras academias, además contamos oficialmente con nuestra plataforma web como herramienta principal de referencia.
+                    <p className="text-center LyricsText ">Nuestra academia ofrece la posibilidad de aprender el trading desde cero de una manera fácil, rápida y dinámica a un precio totalmente accesible a diferencias de otras academias, además contamos oficialmente con nuestra plataforma web como herramienta principal de referencia.
 Todos nuestros cursos están divididos en tres niveles de aprendizaje para guiar al estudiante a su máximo potencial.</p>
                     <pre>
                       
                       </pre>
-                    <p className="text-center LyricsText marginLyrcisS"><strong>“La educación es el arma más poderosa que puedes usar para cambiar el mundo”. </strong></p>
+                    <p className="text-center LyricsText "><strong>“La educación es el arma más poderosa que puedes usar para cambiar el mundo”. </strong></p>
                     <pre>
                       
                       </pre>
-                    <p className="text-center LyricsText marginLyrcisS"><mark>Nelson Mandela</mark></p>
+                    <p className="text-center LyricsText "><mark>Nelson Mandela</mark></p>
                     </Col>
 
                     
@@ -104,11 +130,11 @@ Todos nuestros cursos están divididos en tres niveles de aprendizaje para guiar
                       sm={{ span: 9, offset: 1}}
                     >
                     <h1 className="text-center text-uppercase LyricsTimelineSubs">OBJETIVOS</h1>
-                    <p className="text-center LyricsText marginLyrcisS">Nuestra misión es garantizar el aprendizaje adecuado para todas las personas que quieren gestionar sus propias inversiones sin depender de terceros utilizando sistemas interactivos y fáciles de entender en su proceso de formación.</p>
+                    <p className="text-center LyricsText ">Nuestra misión es garantizar el aprendizaje adecuado para todas las personas que quieren gestionar sus propias inversiones sin depender de terceros utilizando sistemas interactivos y fáciles de entender en su proceso de formación.</p>
                     <pre>
                       
                       </pre>
-                    <p className="text-center LyricsText marginLyrcisS">Recuerda que nadie puede predecir la bolsa de valores, pero si tienes las herramientas y el conocimiento adecuado puedes controlar el riesgo y beneficiarte de las oportunidades al realizar tus inversiones.</p>
+                    <p className="text-center LyricsText ">Recuerda que nadie puede predecir la bolsa de valores, pero si tienes las herramientas y el conocimiento adecuado puedes controlar el riesgo y beneficiarte de las oportunidades al realizar tus inversiones.</p>
                     </Col> 
                     <pre>
                       
@@ -144,7 +170,7 @@ Todos nuestros cursos están divididos en tres niveles de aprendizaje para guiar
                     style={{color: 'black'}}
                   >TU OPINION ES IMPORTANTE PARA NOSOTROS: </h1>
                   <FontAwesomeIcon icon={FaStar}/>
-                  <p className="text-left LyricsText marginLyrcisS">Tu dirección de correo electrónico no será publicada. Los campos obligratorios están marcados con *</p>
+                  <p className="text-left LyricsText ">Tu dirección de correo electrónico no será publicada. Los campos obligratorios están marcados con *</p>
                   {/**<FontAwesomeIcon icon={faHome} />
                      <FontAwesomeIcon icon={FaStarHalfAlt} />
                      <FontAwesomeIcon icon={FaStar} />

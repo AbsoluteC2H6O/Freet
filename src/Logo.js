@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Logo1 from "./LogoFreet.png"
+import Logo1 from "./LogoFreet.png";
 import {Container,Row,Col} from 'react-bootstrap';
 import './App.css';
 import FreetMiniGrafico from './FreetMiniGrafico';
@@ -24,7 +24,7 @@ class Logo extends Component{
             src={Logo1} 
             className="img-fluid" 
             alt="LogoFreet" 
-            style={{width: '35%'}}>
+            style={{width: '55%'}}>
           </img>
           </a>
          

@@ -17,7 +17,7 @@ import LoginGoogle from './LoginGoogle';
 //import firebase from "firebase/app";
 //import "firebase/firestore";
 //import "firebase/storage";
-import FileUploadNew from './MenuIdea';
+//import FileUploadNew from './FileUploadNew';
 import firebase from "firebase/app";
 //import "firebase/firestore";
 import "firebase/storage";
@@ -26,7 +26,287 @@ import Graficoavanzado from "./Graficoavanzado";
 //import{ useFirebaseApp} from "reactfire";
 import Component0 from './Component0';
 
+//import logotest from './t3chfy_cmyk.png';
+class FileUploadNew extends Component {
+	constructor () {
+	  super();
+	  this.state = {
+		uploadValue: 0
+	  };
+	}
+  
+	render () {
+	  return (
+		<div>
+		  <progress value={this.state.uploadValue} max='100'>
+			{this.state.uploadValue} %
+		  </progress>
+		  <br/>
+		  <input type="file" onChange={this.props.onUpload} />
+		  <br/>
+		  <img width="320" src={this.state.picture} alt=""/>
+		</div>
+	  )
+	}
+  }
+  
+class App extends Component {
+	constructor () {
+	  super();
+	  this.state = {
+		user: null,
+		pictures: []
+	  };
+  
+	  this.handleAuth = this.handleAuth.bind(this);
+	  this.handleUpload = this.handleUpload.bind(this);
+	}
+  
+	componentWillMount () {
+	  // Cada vez que el método 'onAuthStateChanged' se dispara, recibe un objeto (user)
+	  // Lo que hacemos es actualizar el estado con el contenido de ese objeto.
+	  // Si el usuario se ha autenticado, el objeto tiene información.
+	  // Si no, el usuario es 'null'
+	  firebase.auth().onAuthStateChanged(user => {
+		this.setState({ user });
+		console.log(`${[user]} SE HA SUBIDO`);
+	  });
+  
+	  firebase.database().ref('pictures').on('child_added', snapshot => {
+		this.setState({
+		  pictures: this.state.pictures.concat(snapshot.val())
+		  
+		});
+	//console.log(`${[pictures]} SE HA SUBIDO`);
+	  });
+	}
+  
+	handleAuth () {
+	  const provider = new firebase.auth.GoogleAuthProvider();
+  
+	  firebase.auth().signInWithPopup(provider)
+		.then(result => console.log(`${result.user.email} ha iniciado sesión`))
+		.catch(error => console.log(`Error ${error.code}: ${error.message}`));
+	}
+  
+	handleLogout () {
+	  firebase.auth().signOut()
+		.then(result => console.log(`${result.user.email} ha iniciado sesión`))
+		.catch(error => console.log(`Error ${error.code}: ${error.message}`));
+	}
+  
+	handleUpload (event) {
+	  const file = event.target.files[0];
+	  const storageRef = firebase.storage().ref(`IdeaImagenes/${file.name}`);
+	  const task = storageRef.put(file);
+  
+	  // Listener que se ocupa del estado de la carga del fichero
+	  task.on('state_changed', snapshot => {
+		// Calculamos el porcentaje de tamaño transferido y actualizamos
+		// el estado del componente con el valor
+		let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+		this.setState({
+		  uploadValue: percentage
+		})
+	  }, error => {
+		// Ocurre un error
+		console.error(error.message);
+	  }, () => {
+		// Subida completada
+		// Obtenemos la URL del fichero almacenado en Firebase storage
+		// Obtenemos la referencia a nuestra base de datos 'pictures'
+		// Creamos un nuevo registro en ella
+		// Guardamos la URL del enlace en la DB
+		const record = {
+		  photoURL: this.state.user.photoURL,
+		  displayName: this.state.user.displayName,
+		  image: task.snapshot.ref.getDownloadURL().then((downloadURL) =>{
+			console.log('File available at', downloadURL);
+			
+		  }),
+		}
+		console.log('File available at', record.image);
+		const dbRef = firebase.database().ref('pictures');
+		const newPicture = dbRef.push();
+		newPicture.set(record);
+	  });
+	}
+  
+	renderLoginButton () {
+	  if (!this.state.user) {
+		return (
+		  <button onClick={this.handleAuth} className="App-btn">
+			Iniciar sesión con Google
+		  </button>
+		);
+	  } else  {
+		return (
+		  <div className="App-intro">
+			<p className="App-intro">¡Hola, { this.state.user.displayName }!</p>
+  
+			<button onClick={this.handleLogout} className="App-btn">
+			  Salir
+			</button>
+  
+			<FileUploadNew onUpload={ this.handleUpload }/>
+  
+			{
+			  this.state.pictures.map(picture => (
+				<div className="App-card">
+				  <figure className="App-card-image">
+					<img width="320" src={picture.image} />
+					{/**<figcaption className="App-card-footer">
+					  <img className="App-card-avatar" src={picture.photoURL} alt={picture.displayName} />
+					  <span className="App-card-name">{picture.displayName}</span>
+					</figcaption> */}
+				  </figure>
+				</div>
+			  )).reverse()
+			}
+  
+		  </div>
+  
+		);
+	  }
+	}
+  
+	render() {
+	  return (
+		<div className="App">
+		  <div className="App-header">
+			
+			<h2>T3chfest 2017</h2>
+		  </div>
+		  { this.renderLoginButton() }
+		</div>
+	  );
+	}
+  }
+  
+  
+  
+class FileUploadNew2 extends Component{
+	constructor(props){
+	  super(props)
+	  this.state ={
+		uploadValue: 0,
+		picture: null
+	   
+	  };
+	  this.handleupload = this.handleupload.bind(this);
+	}
+  
+	handleupload (event){
+	  const file = event.target.files[0];
+	  const storageRef = firebase.storage().ref(`IdeaImagenes/${file.name}`);
+	  const task = storageRef.put(file);
+  
+	  task.on('state_change', snapshot=>{
+		let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) *100;
+		this.setState({
+		  uploadValue: percentage
+		})
+	  }, error =>{
+		console.log(error.message)
+	  }, function() {
+		  task.snapshot.ref.getDownloadURL().then(function(downloadURL)
+		  {
+			this.setState({
+			  uploadValue: 100,
+			  picture:  downloadURL
+			});
+			console.log('File available at', downloadURL);
+		  });
+	   
+		});
+	}
+	render(){
+	  return(
+		<>
+		<Row>
+		   <progress value={this.state.uploadValue} max="100">
+		  {this.state.uploadValue} %
+		</progress>
+		</Row>
+		<Row>
+		  <br/>
+		<input type='file' onChange={this.handleupload}/>
+		</Row>
+	   
+		<Row>
+		<img width="520" src={this.state.picture} alt=""/>
+		
+		</Row>
+	   
+		</>
+	  );
+	}
+  }
+  
 //import firebaseConf from './firebase';
+class FileUpload2 extends Component{
+	constructor(){
+	  super()
+	  this.state ={
+		uploadValue: 0,
+		picture: []
+		//picture: null,
+	  };
+	  this.handleChange = this.handleChange.bind(this);
+	}
+	handleChange (event){
+	  const file = event.target.files[0];
+	  //CatalogosDescargables
+	  const storageRef = firebase.storage().ref(`IdeaImagenes/${file.name}`);
+	  const uploadTask = storageRef.put(file);
+  
+	  uploadTask.on('state_change', (snapshot) => {
+		let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+		this.setState({
+		  uploadValue: percentage
+		})
+	  }, (error) =>{
+		this.setState({
+		  message: `Ha ocurrido un error: ${error.message}`
+		})
+	  }, () =>{
+		this.setState({
+		  message: 'Archivo subido', 
+		  uploadValue: 100,
+		 // picture: uploadTask.snapshot.downloadURL
+		  picture: uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+			console.log('File available at', downloadURL);})
+		  
+		  
+		  
+		});
+	 console.log(this.state.picture) });
+	}
+	
+	render(){
+	  return(
+		<>
+		<Row>
+		  <br/>
+		<progress value={this.state.uploadValue} max="100"></progress>
+		<br/>
+		</Row>
+		<Row>
+		<input type='file' onChange={this.handleChange}/>
+		</Row>
+  
+		<Row>
+		{this.state.message}
+		<br/>
+		{this.state.picture}
+		<img width="520" src={this.state.picture} alt=""/>
+		  
+		</Row>
+	   
+		</>
+	  );
+	}
+  }
 class FileImage extends Component{
 	constructor(props){
 	super(props);
@@ -34,7 +314,7 @@ class FileImage extends Component{
 			user: null,
 			pictures: []
 		};
-		this.handleChange = this.handleChange.bind(this);
+		//this.handleChange = this.handleChange.bind(this);
 		this.handleUpload = this.handleUpload.bind(this);
 	}
 	handleUpload (event){
@@ -93,6 +373,64 @@ class FileImage extends Component{
 		);
 	}
 }
+class FileUploadNew1 extends Component{
+	constructor(props){
+	  super(props)
+	  this.state ={
+		uploadValue: 0,
+		picture: null
+	   
+	  };
+	  this.handleupload = this.handleupload.bind(this);
+	}
+  
+	handleupload (event){
+	  const file = event.target.files[0];
+	  const storageRef = firebase.storage().ref(`IdeaImagenes/${file.name}`);
+	  const task = storageRef.put(file);
+  
+	  task.on('state_change', snapshot=>{
+		let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) *100;
+		this.setState({
+		  uploadValue: percentage
+		})
+	  }, error =>{
+		console.log(error.message)
+	  }, function() {
+		  task.snapshot.ref.getDownloadURL().then(function(downloadURL)
+		  {
+			this.setState({
+			  uploadValue: 100,
+			  picture:  downloadURL
+			});
+			console.log('File available at', downloadURL);
+		  });
+	   
+		});
+	}
+	render(){
+	  return(
+		<>
+		<Row>
+		   <progress value={this.state.uploadValue} max="100">
+		  {this.state.uploadValue} %
+		</progress>
+		</Row>
+		<Row>
+		  <br/>
+		<input type='file' onChange={this.handleupload}/>
+		</Row>
+	   
+		<Row>
+		<img width="520" src={this.state.picture} alt=""/>
+		
+		</Row>
+	   
+		</>
+	  );
+	}
+  }
+  
 class Header extends Component{
 	render(){
 		return(
@@ -140,7 +478,10 @@ class Freet extends Component{
 				 */}
 				
 			<Header/>
+			{/**<a className="LyricsText" href="gs://freet-55de4.appspot.com/CatalogosDescargables/CatPatronG.pdf" id="enlaceDescargarPdf" download> enlace</a>
+              */}       
 			<ComponentPart1/>
+			<FileImage/>
 			<Footer/>
 			<TelegramWidget/>
 			<WhatsappWidget/>	
@@ -153,120 +494,7 @@ class Freet extends Component{
 
 
 
-class App extends Component {
 
-  // inicializamos nuestro estado inicial
-  constructor(props) {
-    super(props);
-    this.state = {
-      form: [],
-      alert: false,
-      alertData: {}
-    };
-  }
-
-  // Mostrar una alerta cuando se envia el formulario
-  showAlert(type, message) {
-    this.setState({
-      alert: true,
-      alertData: { type, message }
-    });
-    setTimeout(() => {
-      this.setState({ alert: false });
-    }, 4000)
-  }
-
-  // Con esta funcion borramos todos los elementos del formulario
-  resetForm() {
-    this.refs.contactForm.reset();
-  }
-
-  // Funcion para enviar la informacion del formulario a Firebase Database
-  sendMessage(e) {
-    // Detiene la acción predeterminada del elemento
-    e.preventDefault();
-    
-    // Creamos un objeto con los valores obtenidos de los inputs
-    const params = {
-      name: this.inputName.value,
-      email: this.inputEmail.value,
-      city: this.inputCity.value,
-      phone: this.inputPhone.value,
-      message: this.textAreaMessage.value
-    };
-    
-    // Validamos que no se encuentren vacios los principales elementos de nuestro formulario
-    if (params.name && params.email && params.phone && params.phone && params.message) {
-      // enviamos nuestro objeto "params" a firebase database
-      firebase.database().ref('form').push(params).then(() => {
-        // Si todo es correcto, actualizamos nuestro estado para mostrar una alerta.
-        this.showAlert('success', 'Your message was sent successfull');
-      }).catch(() => {
-        // Si ha ocurrido un error, actualizamos nuestro estado para mostrar el error 
-        this.showAlert('danger', 'Your message could not be sent');
-      });
-      // limpiamos nuestro formulario llamando la funcion resetform
-      this.resetForm();
-    } else {
-      // En caso de no llenar los elementos necesario despliega un mensaje de alerta
-      this.showAlert('warning', 'Please fill the form');
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        {this.state.alert && <div className={`alert alert-${this.state.alertData.type}`} role='alert'>
-          <div className='container'>
-            {this.state.alertData.message}
-          </div>
-        </div>}
-        <div className='container' style={{ padding: `40px 0px` }}>
-          <div className='row'>
-            <div className='col-sm-4'>
-              <h2>Contact Form</h2>
-              <form onSubmit={this.sendMessage.bind(this)} ref='contactForm' >
-                <div className='form-group'>
-                  <label htmlFor='name'>Name</label>
-                  <input type='text' className='form-control' id='name' 
-                    placeholder='Name' ref={name => this.inputName = name} 
-                  />
-                </div>
-                <div className='form-group'>
-                  <label htmlFor='exampleInputEmail1'>Email</label>
-                  <input type='email' className='form-control' id='email' 
-                    placeholder='Email' ref={email => this.inputEmail = email} 
-                  />
-                </div>
-                <div className='form-group'>
-                  <label htmlFor='city'>City</label>
-                  <select className='form-control' id='city' ref={city => this.inputCity = city}>
-                    <option value='México'>México</option>
-                    <option value='Guadalajara'>Guadalajara</option>
-                    <option value='Monterrey'>Monterrey</option>
-                  </select>
-                </div>
-                <div className='form-group'>
-                  <label htmlFor='phone'>Phone</label>
-                  <input type='number' className='form-control' id='phone' 
-                    placeholder='+52 1' ref={phone => this.inputPhone = phone} 
-                  />
-                </div>
-                <div className='form-group'>
-                  <label htmlFor='message'>Message</label>
-                  <textarea className='form-control' id='message' 
-                    rows='3' ref={message => this.textAreaMessage = message}>
-                  </textarea>
-                </div>
-                <button type='submit' className='btn btn-primary'>Send</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
 
 class App1 extends Component{
 

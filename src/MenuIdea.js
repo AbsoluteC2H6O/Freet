@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import { inject, observer } from "mobx-react";
-import { Button, Form, Container, Row, Col} from "react-bootstrap";
+import { Button, Form, Container, Row, Col, Table} from "react-bootstrap";
 import './NavBar2.css';
 import './App.css';
 import './MenuIdea.css';
@@ -9,8 +9,6 @@ import './MenuIdea.css';
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/storage";
-
-
           
 class FileUploadNew1 extends Component{
   constructor(props){
@@ -35,11 +33,16 @@ class FileUploadNew1 extends Component{
       })
     }, error =>{
       console.log(error.message)
-    }, () =>{
-      this.setState({
-        uploadValue: 100,
-        picture: task.snapshot.downloadURL
-      });
+    }, function() {
+        task.snapshot.ref.getDownloadURL().then(function(downloadURL)
+        {
+          this.setState({
+            uploadValue: 100,
+            picture:  downloadURL
+          });
+          console.log('File available at', downloadURL);
+        });
+     
       });
   }
   render(){
@@ -168,7 +171,7 @@ class Menu extends React.Component {
               noticiasPositivas: this.noticiasPositivasRef.current.value,
               noticiasNegativas: this.noticiasNegativasRef.current.value
             });
-            e.target.reset();
+            e.tanombrerget.reset();
           }}
         >
           <Form.Group>
@@ -301,145 +304,78 @@ class Menu extends React.Component {
             </Col>
           </Row>
         </Row>
-        <Row>  
-          <Col
+          {/**striped bordered hover  */}
+        <Table responsive variant="success">
+        <thead>
+          {/**<Col
             md={{ span: 3, offset: 0}} 
             sm={{ span: 3, offset: 0}}>
             </Col>
-            <h1> </h1>
-            <Col
+            <h1> </h1>  */}
+           
+            {/**<Col
             md={{ span: 3, offset: 0}} 
-            sm={{ span: 3, offset: 0}}>
-
+            sm={{ span: 3, offset: 0}}> */}
+           <tr>
+             <th><br/></th>
+           <th>
             <Form.Label><h1 className="LyricsText">GRAFICO</h1></Form.Label>
             <Form.Control as="select">
               <option>Diario</option>
               <option>Semanal</option>
               <option>Mensual</option>
             </Form.Control> 
-            </Col>
-            <Col
-            md={{ span: 3, offset: 0}} 
-            sm={{ span: 3, offset: 0}}>
+            {/**   </Col>*/}
+            </th>
             
+            <th>
             <Form.Label><h1 className="LyricsText">NOMBRE</h1></Form.Label>
             <Form.Control as="select">
               <option>Diario</option>
               <option>Semanal</option>
               <option>Mensual</option>
             </Form.Control>
-            </Col>
-            <Col
-            md={{ span: 3, offset: 0}} 
-            sm={{ span: 3, offset: 0}}>
+            </th>
+            <th>
             <Form.Label><h1 className="LyricsText">PERIODO</h1></Form.Label>
             <Form.Control as="select">
               <option>Diario</option>
               <option>Semanal</option>
               <option>Mensual</option>
             </Form.Control>
+            </th>
+             </tr>
+            </thead>
+           
+         
+
+          <tbody >
+          <tr>
+         
+            <td><h1 className="LyricsText">Tipo de tendencia: </h1></td>
             
-            </Col>
-          </Row>
 
-
-          <Row>
-          <Col
-            md={{ span: 3, offset: 0}} 
-            sm={{ span: 3, offset: 0}}>
-            <h1 className="LyricsText">*Tipo de tendencia: </h1>
-            </Col>
+         
             
-            <Col
-            md={{ span: 3, offset: 0}} 
-            sm={{ span: 3, offset: 0}}>
+              </tr>
               
-            </Col>
-            <Col
-            md={{ span: 3, offset: 0}} 
-            sm={{ span: 3, offset: 0}}>
-              
-            </Col>
-            <Col
-            md={{ span: 3, offset: 0}} 
-            sm={{ span: 3, offset: 0}}>
-              
-            </Col>
-          </Row>
 
-          <Row> 
-            <Col
-              md={{ span: 3, offset: 0}} 
-              sm={{ span: 3, offset: 0}}>
-              <h1 className="LyricsText">*Patron de tendencia L: </h1>
-              </Col>
-              
-              <Col
-              md={{ span: 3, offset: 0}} 
-              sm={{ span: 3, offset: 0}}>
-                
-              </Col>
-              <Col
-              md={{ span: 3, offset: 0}} 
-              sm={{ span: 3, offset: 0}}>
-                
-              </Col>
-              <Col
-              md={{ span: 3, offset: 0}} 
-              sm={{ span: 3, offset: 0}}>
-                
-              </Col>
-            </Row>
+              <tr>
+              <td><h1 className="LyricsText">Patron de tendencia L: </h1></td>
+              </tr>
 
-            <Row>
-            <Col
-              md={{ span: 3, offset: 0}} 
-              sm={{ span: 3, offset: 0}}>
-              <h1 className="LyricsText">*Tipo de Vela J: </h1>
-              </Col>
-              
-              <Col
-              md={{ span: 3, offset: 0}} 
-              sm={{ span: 3, offset: 0}}>
-                
-              </Col>
-              <Col
-              md={{ span: 3, offset: 0}} 
-              sm={{ span: 3, offset: 0}}>
-                
-              </Col>
-              <Col
-              md={{ span: 3, offset: 0}} 
-              sm={{ span: 3, offset: 0}}>
-                
-              </Col>
-            </Row>
+              <tr>
+            <td><h1 className="LyricsText">Tipo de Vela J: </h1></td>
+            </tr>
 
-            <Row>
-            <Col
-              md={{ span: 3, offset: 0}} 
-              sm={{ span: 3, offset: 0}}>
-              <h1 className="LyricsText">*Patron de vela J: </h1>
-              </Col>
-              
-              <Col
-              md={{ span: 3, offset: 0}} 
-              sm={{ span: 3, offset: 0}}>
-                
-              </Col>
-              <Col
-              md={{ span: 3, offset: 0}} 
-              sm={{ span: 3, offset: 0}}>
-                
-              </Col>
-              <Col
-              md={{ span: 3, offset: 0}} 
-              sm={{ span: 3, offset: 0}}>
-                
-              </Col>
-            </Row>
+            <tr>
+            <td><h1 className="LyricsText">Patron de vela J: </h1></td>
+            </tr>
+            </tbody> 
+            </Table>
             <Row>
               <Form.Label>
+              
               <h1 className="LyricsText">Analisis tecnico </h1> 
               </Form.Label>
             </Row>

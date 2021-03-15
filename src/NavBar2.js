@@ -22,28 +22,28 @@ class NavBar2 extends Component{
                 <div className="collapse navbar-collapse text-left" id="navbarSupportedContent2">
                     <ul className="navbar-nav mr-auto">
                       <li className="nav-item marginEspecial">
-                        <NavLink to="/ideas" activeclassName="active">
-                          <a className="nav-link text-uppercase LyricsTitleNav1" href="#ideas">ideas</a>
+                        <NavLink className="nav-link text-uppercase LyricsTitleNav1" href="#ideas" to="/ideas" activeclassname="active">
+                          ideas
                         </NavLink>
                       </li>
                       <li className="nav-item marginEspecial">
-                      <NavLink to="/resultados" activeclassName="active">
-                          <a className="nav-link text-uppercase LyricsTitleNav1" href="#resultados">resultados</a>
+                      <NavLink className="nav-link text-uppercase LyricsTitleNav1" href="#resultados" to="/resultados" activeclassname="active">
+                          resultados
                       </NavLink>
                       </li> 
                       <li className="nav-item marginEspecial">
-                      <NavLink to="/ratio" activeclassName="active">
-                          <a className="nav-link text-uppercase LyricsTitleNav1" href="#ratio">ratio</a>
+                      <NavLink className="nav-link text-uppercase LyricsTitleNav1" href="#ratio" to="/ratio" activeclassname="active">
+                          ratio
                       </NavLink>
                       </li>
                       <li className="nav-item marginEspecial">
-                      <NavLink to="/calculadoraderiesgo" activeclassName="active">
-                          <a className="nav-link text-uppercase LyricsTitleNav1" href="#calculadoraderiesgo">calculadora de riesgo</a>
+                      <NavLink className="nav-link text-uppercase LyricsTitleNav1" href="#calculadoraderiesgo" to="/calculadoraderiesgo" activeclassname="active">
+                          calculadora de riesgo
                       </NavLink>
                       </li>
                       <li className="nav-item marginEspecial">
-                      <NavLink to="/graficoavanzado" activeclassName="active">
-                          <a className="nav-link text-uppercase LyricsTitleNav1" href="#graficoavanzado">grafico avanzado</a>
+                      <NavLink className="nav-link text-uppercase LyricsTitleNav1" href="#graficoavanzado" to="/graficoavanzado" activeclassname="active">
+                          grafico avanzado
                       </NavLink>
                       </li>
                      

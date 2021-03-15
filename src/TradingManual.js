@@ -70,6 +70,7 @@ import './NavBar1.css';
                     xs={{ span: 12, offset: 0}}
                     sm={{ span: 12, offset: 0}}>
                       <pre> </pre>
+                      {/**ajustar letras interlineado y margen */}
                     <h1
                       className="LyricsTimeline text-uppercase text-center"
                     >TRADING</h1>
@@ -667,17 +668,19 @@ import './NavBar1.css';
                     
                    >
                     
-                     <a href="https://onedrive.live.com/embed?cid=2E431B176AD0DFA1&resid=2E431B176AD0DFA1%212309&authkey=APUaHQJ43gtPbLY&em=2" id="enlaceDescargarPdf" download>
+                     <a href="gs://freet-55de4.appspot.com/CatalogosDescargables/CatPatronG.pdf" id="enlaceDescargarPdf" download>
                     <button
                      className="imagCat"
                     >
+                      {/** <a href="https://onedrive.live.com/embed?cid=2E431B176AD0DFA1&resid=2E431B176AD0DFA1%212309&authkey=APUaHQJ43gtPbLY&em=2" id="enlaceDescargarPdf" download>
+                    */}
                     <img 
                       src={picture2} 
                       className="img-fluid" 
                       alt="Catalogo1" 
                       style={{width: '100%'}}>
                     </img>
-                    <button class="btn"><i class="fa fa-download"></i> Dercargar</button>
+                    <button class="btn"><i class="fa fa-download"></i> Descargar</button>
                     </button>
                     </a>
                    </Col>
@@ -697,7 +700,7 @@ import './NavBar1.css';
                       alt="Catalogo2" 
                       style={{width: '100%'}}>
                     </img>
-                    <button class="btn"><i class="fa fa-download"></i> Dercargar</button>
+                    <button class="btn"><i class="fa fa-download"></i> Descargar</button>
                     </button>
                     </a>
                    </Col>
@@ -717,7 +720,7 @@ import './NavBar1.css';
                       alt="Catalogo3" 
                       style={{width: '100%'}}>
                     </img>
-                    <button class="btn"><i class="fa fa-download"></i> Dercargar</button>
+                    <button class="btn"><i class="fa fa-download"></i> Descargar</button>
                     </button>
                     </a>
                    </Col>
@@ -737,7 +740,7 @@ import './NavBar1.css';
                       alt="Catalogo4" 
                       style={{width: '100%'}}>
                     </img>
-                    <button class="btn"><i class="fa fa-download"></i> Dercargar</button>
+                    <button class="btn"><i class="fa fa-download"></i> Descargar</button>
                     </button>
                     </a>
                    </Col>
